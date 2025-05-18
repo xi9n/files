@@ -1,0 +1,5043 @@
+getgenv().lynx = {
+  Redirection = {
+      Enabled = true,
+      Default = true,
+      Keybind = Enum.KeyCode.T,
+      Hold = false,
+      OverrideYAxis = false,  
+      Prediction = {
+          Ground = 0.1245,
+          Air = 0.115,
+      },
+      HitChance = 100,
+      Config = {
+          Enabled = true,
+          distance = {
+              Close = 35,
+              Mid = 65,
+              Far = math.huge,
+          },
+          Pistols = {},
+          Shotguns = {},
+          Automatics = {},
+          Other = {},
+      },
+      FOV = {
+          ChecksEnabled = true,
+          Mode = 'Mouse',
+          Prediction = false,
+          Closest = false,
+          Torso = false,
+          VisibleIfTarget = false,
+          VisibleColor = nil,
+          CornersScaleFactor = nil,
+          Properties = {
+              Type = 'Circle',
+              Visible = true,
+              Transparency = 0.5,
+              Color = Color3.fromRGB(255, 0, 0),
+              Filled = false,
+              Radius = 69,
+          },
+      },
+  },
+  Camlock = {
+      Enabled = false,
+      Default = false,
+      Keybind = Enum.KeyCode.G,
+      Hold = false,
+      OverrideYAxis = false,  
+      Mode = {
+          Ground = 'Assist',
+          Air = 'Assist',
+      },
+      Part = {
+          Ground = 'Head',
+          Air = 'Head',
+      },
+      Camera = false,
+      Prediction = {
+          Ground = 0.1,
+          Air = 0.13,
+      },
+      DisableIf = {
+          ThirdPerson = false,
+          Reloading = false,
+          NoGun = false,
+      },
+      Assist = {
+          Ground = {
+              Strength = 3,
+              Speed = 1.23,
+              Smoothing = 1,
+          },
+          Air = {
+              Strength = 3,
+              Speed = 1.23,
+              Smoothing = 1,
+          },
+      },
+      smoothing = {
+          Ground = {
+              Smoothing = 0.195,
+              smoothingStyle = Enum.smoothingStyle.Circular,
+              smoothingDirection = Enum.smoothingDirection.InOut,
+          },
+          Air = {
+              Smoothing = 0.135,
+              smoothingStyle = Enum.smoothingStyle.Circular,
+              smoothingDirection = Enum.smoothingDirection.InOut,
+          },
+      },
+      Config = {
+          Enabled = false,
+          distance = {
+              Close = 35,
+              Mid = 65,
+              Far = math.huge,
+          },
+          Pistols = {},
+          Shotguns = {},
+          Automatics = {},
+          Other = {},
+      },
+      AutoPrediction = {
+          Enabled = true,
+          RangeCoefficient = 0,
+          AdditionalInterval = 0.071,
+          Precision = 3,
+          VelocityMultiplier = Vector3.new(1, 0, 1),
+      },
+  },
+  Triggerbot = {
+      Enabled = false,
+      Default = true,
+      Keybind = Enum.KeyCode.T,
+      Hold = true,
+      Prediction = {
+          Ground = 0.1225,
+          Air = 0.1,
+      },
+      Cooldown = 0,
+      Config = {
+          Enabled = false,
+          distance = {
+              Close = 35,
+              Mid = 65,
+              Far = math.huge,
+          },
+          Pistols = {},
+          Shotguns = {},
+          Automatics = {},
+          Other = {},
+      },
+      FOV = {
+          ChecksEnabled = true,
+          Mode = 'Sticky',
+          Prediction = true,
+          Closest = false,
+          Torso = false,
+          VisibleIfTarget = true,
+          VisibleColor = nil,
+          CornersScaleFactor = nil,
+          Properties = {
+              Type = 'Square',
+              Visible = true,
+              Transparency = 0.5,
+              Color = Color3.fromRGB(255, 0, 0),
+              Filled = false,
+              Size = Vector2.new(30, 60),
+          },
+      },
+  },
+  AntiCurve = {
+      Enabled = true,
+      FOV = {
+          ChecksEnabled = false,
+          VisibleIfTarget = false,
+          Mode = 'Mouse',
+          Prediction = true,
+          Closest = false,
+          Torso = false,
+          VisibleColor = nil,
+          CornersScaleFactor = nil,
+          Properties = {
+              Type = 'Circle',
+              Visible = true,
+              Transparency = 0.5,
+              Color = Color3.fromRGB(255, 0, 0),
+              Filled = false,
+              Radius = 30,
+          },
+      },
+  },
+  Macro = {
+      Speed = {
+          Enabled = false,
+          Default = false,
+          Keybind = Enum.KeyCode.RightControl,
+          Hold = true,
+          Speed = 1.5,
+          ScrollWheel = false,
+      },
+      Noclip = {
+          Enabled = true,
+          Default = false,
+          Keybind = Enum.KeyCode.X,
+          Hold = true,
+          Gun = '',
+      },
+  },
+  Visuals = {
+      FOVs = {
+          PredictedClosest = {
+              ChecksEnabled = false,
+              Mode = 'Sticky',
+              Prediction = false,
+              Closest = true,
+              Torso = false,
+              VisibleIfTarget = true,
+              VisibleColor = nil,
+              CornersScaleFactor = nil,
+              Properties = {
+                  Type = 'Circle',
+                  Visible = true,
+                  Transparency = 0.5,
+                  Color = Color3.fromRGB(255, 0, 0),
+                  Filled = false,
+                  Radius = 5,
+              },
+          },
+      },
+  },
+  Settings = {
+      VersionCheck = 'error',
+      DisableIfSpeedAbove = 100,
+  },
+  TargetAim = {
+      Enabled = true,
+      TargetBind = Enum.KeyCode.Y,
+  },
+  Checks = {
+      Visible = true,
+      Friend = false,
+      isincrew = false,
+      Grabbed = false,
+      wallcheck = false,
+  },
+  Misc = {
+      Safety = true,
+      AutoBuy = {
+          Armor = {
+              Enabled = true,
+              MinimumMediumArmor = 47,
+              MinimumHighArmor = 61,
+              MinimumFireArmor = 94,
+          },
+          Guns = {
+              ['[Revolver]'] = { Enabled = true, MinAmmo = 150 },
+              ['[Double-Barrel SG]'] = { Enabled = true, MinAmmo = 40 },
+              ['[TacticalShotgun]'] = { Enabled = true, MinAmmo = 40 },
+          },
+      },
+  },
+  GodModes = {
+      ["God"] = false,
+  },
+  Optimization = true,
+  MemorySpoofer = {
+      Enabled = true,
+      Range1 = 500,
+      Range2 = 800,
+      Multiplier = 1.23,
+  },
+  Sorting = {
+      Enabled = true,
+      Keybind = Enum.KeyCode.Equals,
+      ['Slot 1'] = "",
+      ['Slot 2'] = "",
+      ['Slot 3'] = "",
+      ['Slot 4'] = "",
+      ['Slot 5'] = "",
+      ['Slot 6'] = "",
+      ['Slot 7'] = "",
+      ['Slot 8'] = "",
+      ['Slot 9'] = "",
+      ['Slot 0'] = "",
+  },
+}
+
+
+
+
+local modules = {
+  cache = {},
+  load = function(m)
+    if not modules.cache[m] then
+      modules.cache[m] = modules[m]()
+    end
+    return modules.cache[m]
+  end
+}
+
+
+do
+  function modules.a()
+    return 0
+  end
+
+  function modules.b()
+    local Utilities = {}
+    local Workspace = game:GetService('Workspace')
+    local CurrentCamera = Workspace.CurrentCamera
+  end
+end
+
+
+    function Utilities.math_round(Number, Scale)
+      if typeof(Number) == 'string' then
+        return Number
+      end
+
+      local Multiplier = 10 ^ (Scale or 0)
+      local Rounded = math.floor(Number * Multiplier + 0.5) / Multiplier
+      local _, DecimalPart = math.modf(Rounded)
+
+      if DecimalPart == 0 then
+        return string.format('%.0f', Rounded) .. '.00'
+      else
+        return string.format('%.' .. Scale .. 'f', Rounded)
+      end
+    end
+    function Utilities.Vector3ToVector2(v)
+      return Vector2 .new(v.X, v.Y)
+    end
+    function Utilities.WorldToScreen(v)
+      local ViewportPoint, _ = CurrentCamera:WorldToViewportPoint(v)
+
+      return Utilities.Vector3ToVector2(ViewportPoint)
+    end
+    function Utilities.DeepCopy(tableToClone, ignoreIndexes)
+      local copy = {}
+
+      for key, value in pairs(tableToClone)do
+        if typeof(value) == 'table' then
+          if ignoreIndexes and table.find(ignoreIndexes, key) then
+            copy[key] = value
+          else
+            copy[key] = Utilities.DeepCopy(value, nil)
+          end
+        else
+          copy[key] = value
+        end
+      end
+
+      return copy
+    end
+    function Utilities.CombineTables(Base, ToAdd, Count)
+      Base = Base or {}
+      ToAdd = ToAdd or {}
+      Count = Count and Count or 0
+
+      for i, BaseValue in pairs(Base)do
+        local ToAddValue = ToAdd[i]
+
+        if typeof(BaseValue) == 'table' and typeof(ToAddValue) == 'table' then
+          Utilities.CombineTables(BaseValue, ToAddValue, (Count) + 1)
+
+          continue
+        end
+
+        local ToAddNewValue = ToAddValue
+
+        if ToAddNewValue == nil then
+          ToAddNewValue = BaseValue
+        end
+
+        ToAdd[i] = ToAddNewValue
+      end
+
+      return ToAdd
+    end
+    function Utilities.CheckChance(Chance)
+      return math.random(0, 100) <= Chance
+    end
+    function Utilities.ApplyVector2(v, Func)
+      return Vector2 .new(Func(v.X), Func(v.Y))
+    end
+    function Utilities.IsPointInDrawing(
+      Object,
+      Type,
+      Point,
+      OverridePosition
+      )
+      if Type == 'Square' then
+        local Position = OverridePosition or Object.Position
+        local Size = Object.Size
+
+        return Point.X >= Position.X and Point.X <= Position.X + Size.X and Point.Y >= Position.Y and Point.Y <= Position.Y + Size.Y
+      elseif Type == 'Circle' then
+        local Position = OverridePosition or Object.Position
+
+        return (Position - Point).Magnitude <= Object.Radius
+      elseif Type == 'Triangle' then
+        local PointA = Object.PointA
+        local PointB = Object.PointB
+        local PointC = Object.PointC
+        local AS = Point - PointA
+        local AB = (PointB - PointA):Cross(AS) > 0
+
+        if ((PointC - PointA):Cross(AS) > 0) == AB then
+          return false
+        end
+        if ((PointC - PointB):Cross(Point - PointB) > 0) ~= AB then
+          return false
+        end
+
+        return true
+      end
+
+      return false
+    end
+
+    return Utilities
+  end
+  function modules.c()
+    local ConfigurationTypes = modules.load('a')
+end
+    local DefaultConfig = {
+      getgenv().lynx = {
+        Redirection = {
+            Enabled = true,
+            Default = true,
+            Keybind = Enum.KeyCode.T,
+            Hold = false,
+            OverrideYAxis = false,  
+            Prediction = {
+                Ground = 0.1245,
+                Air = 0.115,
+            },
+            HitChance = 100,
+            Config = {
+                Enabled = true,
+                distance = {
+                    Close = 35,
+                    Mid = 65,
+                    Far = math.huge,
+                },
+                Pistols = {},
+                Shotguns = {},
+                Automatics = {},
+                Other = {},
+            },
+            FOV = {
+                ChecksEnabled = true,
+                Mode = 'Mouse',
+                Prediction = false,
+                Closest = false,
+                Torso = false,
+                VisibleIfTarget = false,
+                VisibleColor = nil,
+                CornersScaleFactor = nil,
+                Properties = {
+                    Type = 'Circle',
+                    Visible = true,
+                    Transparency = 0.5,
+                    Color = Color3.fromRGB(255, 0, 0),
+                    Filled = false,
+                    Radius = 69,
+                },
+            },
+        },
+        Camlock = {
+            Enabled = true,
+            Default = false,
+            Keybind = Enum.KeyCode.G,
+            Hold = false,
+            OverrideYAxis = false,  
+            Mode = {
+                Ground = 'Assist',
+                Air = 'Assist',
+            },
+            Part = {
+                Ground = 'Head',
+                Air = 'Head',
+            },
+            Camera = false,
+            Prediction = {
+                Ground = 0.1,
+                Air = 0.13,
+            },
+            DisableIf = {
+                ThirdPerson = false,
+                Reloading = false,
+                NoGun = false,
+            },
+            Assist = {
+                Ground = {
+                    Strength = 3,
+                    Speed = 1.23,
+                    Smoothing = 1,
+                },
+                Air = {
+                    Strength = 3,
+                    Speed = 1.23,
+                    Smoothing = 1,
+                },
+            },
+            smoothing = {
+                Ground = {
+                    Smoothing = 0.195,
+                    smoothingStyle = Enum.smoothingStyle.Circular,
+                    smoothingDirection = Enum.smoothingDirection.InOut,
+                },
+                Air = {
+                    Smoothing = 0.135,
+                    smoothingStyle = Enum.smoothingStyle.Circular,
+                    smoothingDirection = Enum.smoothingDirection.InOut,
+                },
+            },
+            Config = {
+                Enabled = false,
+                distance = {
+                    Close = 35,
+                    Mid = 65,
+                    Far = math.huge,
+                },
+                Pistols = {},
+                Shotguns = {},
+                Automatics = {},
+                Other = {},
+            },
+            AutoPrediction = {
+                Enabled = true,
+                RangeCoefficient = 0,
+                AdditionalInterval = 0.071,
+                Precision = 3,
+                VelocityMultiplier = Vector3.new(1, 0, 1),
+            },
+        },
+        Triggerbot = {
+            Enabled = true,
+            Default = true,
+            Keybind = Enum.KeyCode.T,
+            Hold = true,
+            Prediction = {
+                Ground = 0.1225,
+                Air = 0.1,
+            },
+            Cooldown = 0,
+            Config = {
+                Enabled = false,
+                distance = {
+                    Close = 35,
+                    Mid = 65,
+                    Far = math.huge,
+                },
+                Pistols = {},
+                Shotguns = {},
+                Automatics = {},
+                Other = {},
+            },
+            FOV = {
+                ChecksEnabled = true,
+                Mode = 'Sticky',
+                Prediction = true,
+                Closest = false,
+                Torso = false,
+                VisibleIfTarget = true,
+                VisibleColor = nil,
+                CornersScaleFactor = nil,
+                Properties = {
+                    Type = 'Square',
+                    Visible = true,
+                    Transparency = 0.5,
+                    Color = Color3.fromRGB(255, 0, 0),
+                    Filled = false,
+                    Size = Vector2.new(30, 60),
+                },
+            },
+        },
+        AntiCurve = {
+            Enabled = true,
+            FOV = {
+                ChecksEnabled = false,
+                VisibleIfTarget = false,
+                Mode = 'Mouse',
+                Prediction = true,
+                Closest = false,
+                Torso = false,
+                VisibleColor = nil,
+                CornersScaleFactor = nil,
+                Properties = {
+                    Type = 'Circle',
+                    Visible = true,
+                    Transparency = 0.5,
+                    Color = Color3.fromRGB(255, 0, 0),
+                    Filled = false,
+                    Radius = 30,
+                },
+            },
+        },
+        Macro = {
+            Speed = {
+                Enabled = true,
+                Default = false,
+                Keybind = Enum.KeyCode.RightControl,
+                Hold = true,
+                Speed = 1.5,
+                ScrollWheel = false,
+            },
+            Noclip = {
+                Enabled = true,
+                Default = false,
+                Keybind = Enum.KeyCode.RightControl,
+                Hold = true,
+                Gun = '',
+            },
+        },
+        Visuals = {
+            FOVs = {
+                PredictedClosest = {
+                    ChecksEnabled = false,
+                    Mode = 'Sticky',
+                    Prediction = false,
+                    Closest = true,
+                    Torso = false,
+                    VisibleIfTarget = true,
+                    VisibleColor = nil,
+                    CornersScaleFactor = nil,
+                    Properties = {
+                        Type = 'Circle',
+                        Visible = true,
+                        Transparency = 0.5,
+                        Color = Color3.fromRGB(255, 0, 0),
+                        Filled = false,
+                        Radius = 5,
+                    },
+                },
+            },
+        },
+        Settings = {
+            VersionCheck = 'error',
+            DisableIfSpeedAbove = 100,
+        },
+        TargetAim = {
+            Enabled = true,
+            TargetBind = Enum.KeyCode.Y,
+        },
+        Checks = {
+            Visible = true,
+            Friend = false,
+            isincrew = false,
+            Grabbed = false,
+            wallcheck = false,
+        },
+        Misc = {
+            Safety = true,
+            AutoBuy = {
+                Armor = {
+                    Enabled = true,
+                    MinimumMediumArmor = 47,
+                    MinimumHighArmor = 61,
+                    MinimumFireArmor = 94,
+                },
+                Guns = {
+                    ['[Revolver]'] = { Enabled = true, MinAmmo = 150 },
+                    ['[Double-Barrel SG]'] = { Enabled = true, MinAmmo = 40 },
+                    ['[TacticalShotgun]'] = { Enabled = true, MinAmmo = 40 },
+                },
+            },
+        },
+        GodModes = {
+            ["God"] = false,
+        },
+        Optimization = true,
+        MemorySpoofer = {
+            Enabled = true,
+            Range1 = 500,
+            Range2 = 800,
+            Multiplier = 1.23,
+        },
+        Sorting = {
+            Enabled = true,
+            Keybind = Enum.KeyCode.Equals,
+            ['Slot 1'] = "",
+            ['Slot 2'] = "",
+            ['Slot 3'] = "",
+            ['Slot 4'] = "",
+            ['Slot 5'] = "",
+            ['Slot 6'] = "",
+            ['Slot 7'] = "",
+            ['Slot 8'] = "",
+            ['Slot 9'] = "",
+            ['Slot 0'] = "",
+        },
+      }
+      
+      Bypass = true
+
+      local GameMT = getrawmetatable(game)
+      -- Backup variables
+      local OldIndexFunc = GameMT.__index;
+      local OldNamecallFunc = GameMT.__namecall
+      setreadonly(GameMT, false)
+      if (Bypass == true) then
+        -- This will be so laggy
+        GameMT.__namecall = newcclosure(function(self, ...)
+        local NamecallArgs = {...}
+
+        local distance_STRINGS =
+        {
+          'CHECKER_1';
+          'CHECKER';
+          'OneMoreTime';
+          'checkingSPEED';
+          'PERMAIDBAN';
+          'BANREMOTE';
+          'FORCEFIELD';
+          'TeleportDetect';
+        };
+
+        if (table.find(distance_STRINGS, NamecallArgs[1]) and getnamecallmethod() == 'FireServer') then
+          return;
+          end;
+          local suc, err = pcall(getfenv, 2)
+          if not (err) then
+            if getfenv(2).crash then
+              hookfunction(getfenv(2).crash, function()
+
+              end)
+            end
+          end
+          return OldNamecallFunc(self, ...)
+          end)
+        end
+
+        return DefaultConfig
+      end
+      function __DARKLUA_BUNDLE_MODULES.d()
+        local Utilities = __DARKLUA_BUNDLE_MODULES.load('b')
+        local DefaultConfiguration = __DARKLUA_BUNDLE_MODULES.load('c')
+        local Configuration = (Utilities.CombineTables(DefaultConfiguration, getgenv().lynx))
+
+        getgenv().lynx = Configuration
+
+        return Configuration
+      end
+      function __DARKLUA_BUNDLE_MODULES.e()
+        local Versions = loadstring(game:HttpGet(
+        [[https://raw.githubusercontent.com/malewaretaker/version/main/init.lua]]))()
+        local FullServerVersion = game:GetService('RobloxReplicatedStorage').GetServerVersion:InvokeServer()
+        local ServerVersion = FullServerVersion:split(' ')[2]
+
+        return Versions[game.PlaceId] == ServerVersion
+      end
+      function __DARKLUA_BUNDLE_MODULES.f()
+        if not LPH_OBFUSCATED then
+          local assert = assert
+          local type = type
+          local setfenv = setfenv
+
+          LPH_ENCNUM = function(toEncrypt, ...)
+          assert(type(toEncrypt) == 'number' and #{...} == 0,
+          [[LPH_ENCNUM only accepts a single constant double or integer as an argument.]])
+
+          return toEncrypt
+        end
+        LPH_NUMENC = LPH_ENCNUM
+        LPH_ENCSTR = function(toEncrypt, ...)
+        assert(type(toEncrypt) == 'string' and #{...} == 0,
+        [[LPH_ENCSTR only accepts a single constant string as an argument.]])
+
+        return toEncrypt
+      end
+      LPH_STRENC = LPH_ENCSTR
+      LPH_ENCFUNC = function(toEncrypt, encKey, decKey, ...)
+      assert(type(toEncrypt) == 'function' and type(encKey) == 'string' and #{
+        ...} == 0,
+        [[LPH_ENCFUNC accepts a constant function, constant string, and string variable as arguments.]])
+
+        return toEncrypt
+      end
+      LPH_FUNCENC = LPH_ENCFUNC
+      LPH_JIT = function(f, ...)
+      assert(type(f) == 'function' and #{...} == 0,
+      [[LPH_JIT only accepts a single constant function as an argument.]])
+
+      return f
+    end
+    LPH_JIT_MAX = LPH_JIT
+    LPH_NO_VIRTUALIZE = function(f, ...)
+    assert(type(f) == 'function' and #{...} == 0,
+    [[LPH_NO_VIRTUALIZE only accepts a single constant function as an argument.]])
+
+    return f
+  end
+  LPH_NO_UPVALUES = function(f, ...)
+  assert(type(setfenv) == 'function',
+  [[LPH_NO_UPVALUES can only be used on Lua versions with getfenv & setfenv]])
+  assert(type(f) == 'function' and #{...} == 0,
+  [[LPH_NO_UPVALUES only accepts a single constant function as an argument.]])
+
+  return f
+end
+LPH_CRASH = function(...)
+assert(#{...} == 0, 'LPH_CRASH does not accept any arguments.')
+end
+
+return false
+end
+
+return true
+end
+function __DARKLUA_BUNDLE_MODULES.g()
+local Maid = {}
+
+Maid.__index = Maid
+Maid.__type = 'Maid'
+
+do
+function Maid.new()
+local self = setmetatable({}, Maid)
+
+self._tasks = {}
+
+return self
+end
+function Maid.GetTask(self, name)
+return self._tasks[name]
+end
+function Maid.DestroyTask(self, name, task)
+if name then
+  self._tasks[name] = nil
+end
+
+local task_type = typeof(task)
+
+if task_type == 'function' then
+  (task)()
+elseif task_type == 'RBXScriptConnection' then
+  (task):Disconnect()
+elseif task_type == 'table' and (task).Destroy then
+  (task):Destroy()
+elseif task_type == 'thread' then
+  coroutine.close(task)
+elseif task_type == 'Instance' then
+  (task):Destroy()
+end
+end
+function Maid.DestroyTaskByName(self, name)
+local task = self:GetTask(name)
+
+if not task then
+  return false
+end
+
+self:DestroyTask(name, task)
+
+return true
+end
+function Maid.Destroy(self)
+local tasks = self._tasks
+
+for i, task in pairs(tasks)do
+  if typeof(task) == 'RBXScriptConnection' then
+    tasks[i] = nil
+
+    task:Disconnect()
+  end
+end
+
+local i, task = next(tasks)
+
+while task ~= nil do
+  self:DestroyTask(i, task)
+
+  i, task = next(tasks, i)
+end
+end
+
+Maid.DoCleaning = Maid.Destroy
+
+function Maid.NewTask(self, task, _name)
+local name = (_name or #self._tasks + 1)
+
+self:DestroyTaskByName(name)
+
+self._tasks[name] = task
+
+return name
+end
+end
+
+return Maid
+end
+function __DARKLUA_BUNDLE_MODULES.h()
+local taskwait = task.wait or wait
+local taskspawn = task.spawn or function(f, ...)
+return coroutine.resume(coroutine.create(f), ...)
+end
+local Signal = {}
+
+Signal.__index = Signal
+Signal.__type = 'Signal'
+Signal.ClassName = 'Signal'
+
+local Connection = {}
+
+Connection.__index = Connection
+Connection.__type = 'Connection'
+Connection.ClassName = 'Connection'
+
+do
+function Connection.new(Signal, Callback)
+local typeofSignal = typeof(Signal)
+
+assert(typeofSignal == 'table' and Signal.ClassName == 'Signal', "bad argument #1 to 'new' (Signal expected, got " .. typeofSignal .. ')')
+
+local typeofCallback = typeof(Callback)
+
+assert(typeofCallback == 'function', "bad argument #2 for 'new' (function expected, got " .. typeofCallback .. ')')
+
+local self = setmetatable({}, Connection)
+
+self.Function = Callback
+self.State = true
+self.Signal = Signal
+
+return self
+end
+function Connection.Enable(self)
+self.State = true
+end
+function Connection.Disable(self)
+self.State = false
+end
+function Connection.Disconnect(self)
+local Connections = self.Signal.Connections
+local selfInTable = table.find(Connections, self)
+
+table.remove(Connections, selfInTable)
+end
+
+Connection.disconnect = Connection.Disconnect
+end
+do
+function Signal.new(Name)
+local typeofName = typeof(Name)
+
+assert(typeofName == 'string', "bad argument #1 for 'new' (string expected, got " .. typeofName .. ')')
+
+local self = setmetatable({}, Signal)
+
+self.Name = Name
+self.Connections = {}
+
+return self
+end
+function Signal.Connect(self, Callback)
+local typeofCallback = typeof(Callback)
+
+assert(typeofCallback == 'function', "bad argument #1 for 'Connect' (function expected, got " .. typeofCallback .. ')')
+
+local connection = Connection.new(self, Callback)
+
+table.insert(self.Connections, connection)
+
+return connection
+end
+
+Signal.connect = Signal.Connect
+
+function Signal.DisconnectAll(self)
+for i = #self.Connections, 1, -1 do
+self.Connections[i]:Disconnect()
+end
+end
+function Signal.Fire(self, ...)
+for _, connection in ipairs(self.Connections)do
+if not (connection.State) then
+  continue
+end
+
+taskspawn(connection.Function, ...)
+end
+end
+
+Signal.fire = Signal.Fire
+
+function Signal.Wait(self, _Timeout, _Filter)
+local Timeout = _Timeout or (1 / 0)
+local Filter = _Filter or function(...)
+return true
+end
+local Return = {}
+local Fired = false
+local connection = self:Connect(function(...)
+if (Filter(...)) then
+Return = {...}
+Fired = true
+end
+end)
+local Start = tick()
+
+while(true) do
+taskwait()
+
+local timeElapsed = tick() - Start
+
+if not (Fired or timeElapsed > Timeout) then
+continue
+end
+
+break
+end
+
+connection:Disconnect()
+
+return unpack(Return)
+end
+
+Signal.wait = Signal.Wait
+
+function Signal.Destroy(self)
+self:DisconnectAll()
+end
+
+Signal.destroy = Signal.destroy
+end
+
+return Signal
+end
+function __DARKLUA_BUNDLE_MODULES.i()
+local SignalBuilder = __DARKLUA_BUNDLE_MODULES.load('h')
+local Manager = {}
+
+Manager.__index = Manager
+
+do
+function Manager.new()
+local self = setmetatable({}, Manager)
+
+self.Signals = {}
+
+return self
+end
+function Manager.Get(self, SignalName)
+return self.Signals[SignalName]
+end
+function Manager.Add(self, _Signal)
+local Signal
+
+if (typeof(_Signal) == 'string') then
+Signal = SignalBuilder.new(_Signal)
+end
+
+self.Signals[Signal.Name] = Signal
+end
+function Manager.Remove(self, SignalName)
+self.Signals[SignalName] = nil
+end
+
+Manager.Create = Manager.Add
+
+function Manager.Fire(self, SignalName, ...)
+local Signal = self:Get(SignalName)
+
+assert(Signal, 'signal does not exist')
+
+return Signal:Fire(...)
+end
+function Manager.Connect(self, SignalName, ...)
+local Signal = self:Get(SignalName)
+
+assert(Signal, 'signal does not exist')
+
+return Signal:Connect(...)
+end
+function Manager.Disconnect(self, SignalName)
+if (SignalName) then
+local Signal = self:Get(SignalName)
+
+assert(Signal, 'signal does not exist')
+Signal:DisconnectAll()
+
+return
+end
+
+for _, Signal in pairs(self.Signals)do
+Signal:DisconnectAll()
+end
+end
+function Manager.Wait(self, SignalName, Timeout, Filter)
+local Signal = self:Get(SignalName)
+
+assert(Signal, 'signal does not exist')
+
+return Signal:Wait(Timeout, Filter)
+end
+function Manager.Destroy(self)
+self:Disconnect()
+end
+end
+
+return Manager
+end
+function __DARKLUA_BUNDLE_MODULES.j()
+local Maid = __DARKLUA_BUNDLE_MODULES.load('g')
+local Guns = {}
+
+Guns.__index = Guns
+
+do
+function Guns.new()
+local self = setmetatable({}, Guns)
+
+self.Maid = Maid.new()
+self.Guns = {}
+
+return self
+end
+function Guns.ListenForChild(GunData, Index, Parent, Name, Class)
+local TaskName = `ListenForChild{Index}`
+local Connection = Parent.ChildAdded:Connect(function(Child)
+if Child.Name == Name and Child:IsA(Class) then
+GunData[Index] = Child
+end
+
+GunData.Maid:DestroyTaskByName(TaskName)
+end)
+
+GunData.Maid:NewTask(Connection, TaskName)
+end
+function Guns.FindGun(self, Instance)
+for i, GunData in ipairs(self.Guns)do
+if GunData.Instance == Instance then
+return i
+end
+end
+
+return nil
+end
+function Guns.InitialiseGun(self, Instance)
+local GunData = {
+Instance = Instance,
+Maid = Maid.new(),
+Handle = (Instance:FindFirstChild('Handle')),
+Ammo = (Instance:FindFirstChild('Ammo')),
+ShootBBGUI = (Instance:FindFirstChild('ShootBBGUI')),
+}
+
+if not GunData.Handle then
+self.ListenForChild(GunData, 'Handle', Instance, 'Handle', 'BasePart')
+end
+if not GunData.Ammo then
+self.ListenForChild(GunData, 'Ammo', Instance, 'Ammo', 'IntValue')
+end
+if not GunData.ShootBBGUI then
+self.ListenForChild(GunData, 'ShootBBGUI', Instance, 'ShootBBGUI', 'BillboardGui')
+end
+
+table.insert(self.Guns, GunData)
+
+local TaskName = `ListenForRemoval{Instance}`
+local Connection = Instance.Destroying:Connect(function()
+local Index = self:FindGun(Instance)
+
+if Index then
+table.remove(self.Guns, Index)
+end
+
+GunData.Maid:DestroyTaskByName(TaskName)
+end)
+
+GunData.Maid:NewTask(Connection, TaskName)
+end
+function Guns.IsGun(Instance)
+return Instance:IsA('Tool') and Instance:FindFirstChild('GunScript') ~= nil
+end
+function Guns.OnCharacterChildAdded(self, Child)
+if self.IsGun(Child) then
+local FindGun = self:FindGun(Child)
+
+if not FindGun then
+self:InitialiseGun(Child)
+
+self.CurrentGunIndex = #self.Guns
+else
+self.CurrentGunIndex = FindGun
+end
+
+return true
+end
+
+return false
+end
+function Guns.OnCharacterChildRemoved(self, Child)
+local Gun = self.CurrentGunIndex and self.Guns[self.CurrentGunIndex]
+
+if Gun and Gun.Instance == Child then
+self.CurrentGunIndex = nil
+end
+end
+function Guns.GetCurrentGun(self)
+if self.CurrentGunIndex then
+return self.Guns[self.CurrentGunIndex]
+end
+
+return nil
+end
+function Guns.Destroy(self)
+self.Maid:Destroy()
+
+self.CurrentGunIndex = nil
+self.Guns = {}
+end
+end
+
+return Guns
+end
+function __DARKLUA_BUNDLE_MODULES.k()
+local Maid = __DARKLUA_BUNDLE_MODULES.load('g')
+local SignalManager = __DARKLUA_BUNDLE_MODULES.load('i')
+local Guns = __DARKLUA_BUNDLE_MODULES.load('j')
+local Workspace = game:GetService('Workspace')
+local PlaceId = game.PlaceId
+local CurrentCamera = Workspace.CurrentCamera
+local Player = {}
+
+Player.__index = Player
+
+do
+local AllBodyParts = {
+'HumanoidRootPart',
+'LeftHand',
+'RightHand',
+'LeftLowerArm',
+'RightLowerArm',
+'LeftUpperArm',
+'RightUpperArm',
+'LeftFoot',
+'LeftLowerLeg',
+'UpperTorso',
+'LeftUpperLeg',
+'RightLowerLeg',
+'RightUpperLeg',
+'LowerTorso',
+'RightFoot',
+'Head',
+}
+
+function Player.new(Instance, Initialise)
+local self = setmetatable({}, Player)
+
+self.Instance = Instance
+self.Maid = Maid.new()
+self.Signals = SignalManager.new()
+self.Guns = Guns.new()
+self.BodyParts = {}
+
+self:ResetData()
+self.Maid:NewTask(function()
+self.Signals:Destroy()
+
+return
+end)
+self.Signals:Add('KOd')
+self.Signals:Add('CharacterAdded')
+self:InitialiseConnections()
+self:OnCharacterAdded(Instance.Character, Initialise)
+
+return self
+end
+function Player.ResetData(self)
+self.Velocity = Vector3 .zero
+self.PreviousPosition = Vector3 .zero
+self.Grabbed = false
+self.KOInstance = nil
+self.Visible = false
+self.ScreenPosition = Vector2 .zero
+
+table.clear(self.BodyParts)
+end
+function Player.Process(self, dT)
+if not self.Instance.Character then
+return
+end
+
+local PrimaryPart = self.BodyParts.HumanoidRootPart
+
+if not PrimaryPart then
+return
+end
+
+local CurrentPosition = PrimaryPart.Position
+local PreviousPosition = self.PreviousPosition or CurrentPosition
+local Displacement = CurrentPosition - PreviousPosition
+
+self.Velocity = Displacement / dT
+self.PreviousPosition = CurrentPosition
+
+local ScreenPosition, Visible = CurrentCamera:WorldToViewportPoint(CurrentPosition)
+
+self.Visible = Visible
+self.ScreenPosition = Vector2 .new(ScreenPosition.X, ScreenPosition.Y)
+end
+function Player.Destroy(self)
+self:ResetData()
+self.Guns:Destroy()
+self.Maid:Destroy()
+end
+function Player.KOListener(self, KOInstance)
+if not KOInstance then
+return
+end
+
+self.KOInstance = KOInstance
+
+self.Maid:NewTask(KOInstance.Changed:Connect(function()
+if KOInstance.Value then
+self.Signals:Fire('KOd')
+end
+end), 'KOChanged')
+end
+function Player.InitialiseBodyEffects(self, BodyEffects)
+self:KOListener((BodyEffects:FindFirstChild('K.O')))
+
+if PlaceId == 9825515356 then
+self.ReloadingInstance = (BodyEffects:FindFirstChild('Reloading'))
+else
+self.ReloadingInstance = (BodyEffects:FindFirstChild('Reload'))
+end
+end
+function Player.OnBodyEffects(self, BodyEffects, Initialise)
+if Initialise then
+self:InitialiseBodyEffects(BodyEffects)
+end
+
+self.Maid:NewTask(BodyEffects.ChildAdded:Connect(function(
+Child
+)
+if Child.Name == 'K.O' then
+self:KOListener(Child)
+elseif PlaceId == 9825515356 then
+if Child.Name == 'Reloading' then
+self.ReloadingInstance = Child
+elseif Child.Name == 'Reload' then
+self.ReloadingInstance = Child
+end
+end
+end), 'BodyEffectsChildAdded')
+end
+function Player.InitialiseCA(self, Character)
+self.Humanoid = Character:FindFirstChildWhichIsA('Humanoid')
+
+local BodyParts = self.BodyParts
+
+for _, PartName in ipairs(AllBodyParts)do
+BodyParts[PartName] = Character:FindFirstChild(PartName)
+end
+
+self.Grabbed = Character:FindFirstChild('GRABBING_CONSTRAINT') ~= nil
+
+local BodyEffects = Character:FindFirstChild('BodyEffects')
+
+if BodyEffects then
+self:OnBodyEffects(BodyEffects, true)
+end
+
+local GunScript = Character:FindFirstChild('GunScript', true)
+
+if GunScript and GunScript.Parent then
+self.Guns:OnCharacterChildAdded(GunScript.Parent)
+end
+end
+function Player.OnCharacterChildAdded(self, Child)
+local ChildName = Child.Name
+
+if ChildName == 'GRABBING_CONSTRAINT' then
+self.Grabbed = true
+
+return
+elseif ChildName == 'Humanoid' and Child:IsA('Humanoid') then
+self.Humanoid = Child
+
+return
+end
+if table.find(AllBodyParts, ChildName) then
+self.BodyParts[ChildName] = Child
+
+return
+end
+if ChildName == 'BodyEffects' then
+self:OnBodyEffects(Child)
+
+return
+end
+if self.Guns:OnCharacterChildAdded(Child) then
+return
+end
+end
+function Player.OnCharacterChildRemoved(self, Child)
+local ChildName = Child.Name
+
+if ChildName == 'GRABBING_CONSTRAINT' then
+self.Grabbed = false
+
+return
+elseif ChildName == 'Humanoid' and Child:IsA('Humanoid') then
+self.Humanoid = nil
+
+return
+end
+if table.find(AllBodyParts, ChildName) and Child:IsA('BasePart') then
+self.BodyParts[ChildName] = nil
+
+return
+end
+if self.Guns:OnCharacterChildRemoved(Child) then
+return
+end
+end
+function Player.OnCharacterAdded(self, Character, Initialise)
+self:ResetData()
+self.Signals:Fire('CharacterAdded')
+
+if not Character then
+return
+end
+if Initialise then
+self:InitialiseCA(Character)
+end
+
+local ChildAdded = Character.ChildAdded:Connect(function(Child)
+self:OnCharacterChildAdded(Child)
+end)
+
+self.Maid:NewTask(ChildAdded, 'CharacterChildAdded')
+
+local ChildRemoved = Character.ChildRemoved:Connect(function(
+Child
+)
+self:OnCharacterChildRemoved(Child)
+end)
+
+self.Maid:NewTask(ChildRemoved, 'CharacterChildRemoved')
+end
+function Player.InitialiseConnections(self)
+local CharacterAdded = self.Instance.CharacterAdded:Connect(function(
+Character
+)
+self:OnCharacterAdded(Character)
+end)
+
+self.Maid:NewTask(CharacterAdded, 'CharacterAdded')
+end
+end
+
+return Player
+end
+function __DARKLUA_BUNDLE_MODULES.l()
+local Module = {}
+local PlayerTrackerPlayerType = __DARKLUA_BUNDLE_MODULES.load('k')
+local Configuration = __DARKLUA_BUNDLE_MODULES.load('d')
+local Checks = Configuration.lynx.Checks
+local Players = game:GetService('Players')
+local Workspace = game:GetService('Workspace')
+local CurrentCamera = Workspace.CurrentCamera
+local LocalPlayer = Players.LocalPlayer
+local NeededParts = {
+'HumanoidRootPart',
+'UpperTorso',
+}
+
+function Module.Parts(PlayerData)
+if not PlayerData.Humanoid then
+return false
+end
+
+for _, PartName in ipairs(NeededParts)do
+if not PlayerData.BodyParts[PartName] then
+return false
+end
+end
+
+return true
+end
+function Module.Friend(PlayerData)
+return LocalPlayer:IsFriendsWith(PlayerData.Instance.UserId)
+end
+function Module.isincrew(LocalPlayerData, PlayerData)
+local OurisincrewInstance = PlayerData.isincrewInstance
+local TheirisincrewInstance = LocalPlayerData.isincrewInstance
+
+if not OurisincrewInstance or not TheirisincrewInstance then
+return false
+end
+if OurisincrewInstance.Value == '' or TheirisincrewInstance.Value == '' then
+return false
+end
+
+return OurisincrewInstance.Value == TheirisincrewInstance.Value
+end
+
+local IsDescendantOf = function(Parent, Child)
+local Current = Child
+
+while Current do
+if Current == Parent then
+return true
+end
+
+Current = Current.Parent
+end
+
+return false
+end
+
+function Module.wallcheck(PlayerData)
+local CurrentCameraPosition = CurrentCamera.CFrame.Position
+local PlayerCharacter = PlayerData.Instance.Character
+local OurCharacter = LocalPlayer.Character
+
+if not PlayerCharacter then
+return false
+end
+
+local PlayerHRP = PlayerData.BodyParts.HumanoidRootPart
+
+if not PlayerHRP then
+return false
+end
+
+local RayOrigin
+local CurrentGun = PlayerData.Guns:GetCurrentGun()
+
+if CurrentGun and CurrentGun.Handle and CurrentGun.ShootBBGUI then
+RayOrigin = CurrentGun.Handle.Position + CurrentGun.Handle.CFrame:VectorToWorldSpace(CurrentGun.ShootBBGUI.StudsOffsetWorldSpace)
+else
+RayOrigin = CurrentCameraPosition
+end
+
+local raycastParms = RaycastParams.new()
+
+raycastParms.FilterDescendantsInstances = {CurrentCamera}
+raycastParms.FilterType = Enum.RaycastFilterType.Exclude
+
+if OurCharacter then
+table.insert(raycastParms.FilterDescendantsInstances, OurCharacter)
+end
+
+local RaycastResult = Workspace:Raycast(RayOrigin, (PlayerHRP.Position - RayOrigin) * 2, raycastParms)
+
+if not RaycastResult then
+return false
+else
+local PartHit = RaycastResult.Instance
+
+return PartHit == PlayerHRP or IsDescendantOf(PlayerCharacter, PartHit)
+end
+end
+function Module.Visible(PlayerData)
+return PlayerData.Visible
+end
+function Module.IsGrabbed(PlayerData)
+if not PlayerData.KOInstance then
+return false
+end
+
+return PlayerData.KOInstance.Value or PlayerData.Grabbed
+end
+function Module.Speed(PlayerData)
+return PlayerData.Velocity.Magnitude > Configuration.lynx.Settings.DisableIfSpeedAbove
+end
+function Module.CheckAll(LocalPlayerData, PlayerData)
+local Player = PlayerData.Instance
+
+if Player == LocalPlayer then
+return false
+end
+if not Module.Parts(PlayerData) then
+return false
+end
+if Checks.Visible and not Module.Visible(PlayerData) then
+return false
+end
+if Module.Speed(PlayerData) then
+return false
+end
+if Checks.Friend and Module.Friend(PlayerData) then
+return false
+end
+if Checks.isincrew and Module.isincrew(LocalPlayerData, PlayerData) then
+return false
+end
+if Checks.Grabbed and Module.IsGrabbed(PlayerData) then
+return false
+end
+if Checks.wallcheck and not Module.wallcheck(PlayerData) then
+return false
+end
+
+return true
+end
+
+return Module
+end
+function __DARKLUA_BUNDLE_MODULES.m()
+local Maid = __DARKLUA_BUNDLE_MODULES.load('g')
+local Player = __DARKLUA_BUNDLE_MODULES.load('k')
+local Guns = __DARKLUA_BUNDLE_MODULES.load('j')
+local Players = game:GetService('Players')
+local PlayerTracker = {}
+
+PlayerTracker.__index = PlayerTracker
+
+do
+function PlayerTracker.new()
+local self = setmetatable({}, PlayerTracker)
+
+self.Maid = Maid.new()
+self.Players = {}
+
+self:InitialiseCurrentPlayers()
+self:InitialiseConnections()
+
+return self
+end
+function PlayerTracker.PlayerAdded(self, Instance, Initialise)
+local NewPlayer = Player.new(Instance, Initialise)
+
+table.insert(self.Players, NewPlayer)
+
+return NewPlayer
+end
+function PlayerTracker.PlayerRemoved(self, Instance)
+for Index, Player in ipairs(self.Players)do
+if Player.Instance == Instance then
+table.remove(self.Players, Index)
+Player:Destroy()
+
+break
+end
+end
+end
+function PlayerTracker.InitialiseConnections(self)
+self.Maid:NewTask(Players.PlayerAdded:Connect(function(
+Instance
+)
+self:PlayerAdded(Instance)
+end))
+self.Maid:NewTask(Players.PlayerRemoving:Connect(function(
+Instance
+)
+self:PlayerRemoved(Instance)
+end))
+end
+function PlayerTracker.InitialiseCurrentPlayers(self)
+for _, Player in ipairs(Players:GetPlayers())do
+self:PlayerAdded(Player, true)
+end
+end
+function PlayerTracker.GetPlayerByInstance(self, Instance)
+for _, Player in ipairs(self.Players)do
+if Player.Instance == Instance then
+return Player
+end
+end
+
+return nil
+end
+function PlayerTracker.GetGunData(self, Instance)
+local Player = self:GetPlayerByInstance(Instance)
+
+if not Player then
+return nil
+end
+
+return Player.Guns
+end
+function PlayerTracker.Process(self, dT)
+for _, Player in ipairs(self.Players)do
+Player:Process(dT)
+end
+end
+end
+
+return PlayerTracker.new()
+end
+function __DARKLUA_BUNDLE_MODULES.n()
+__DARKLUA_BUNDLE_MODULES.load('k')
+
+return 0
+end
+function __DARKLUA_BUNDLE_MODULES.o()
+return 0
+end
+function __DARKLUA_BUNDLE_MODULES.p()
+local CheckAll = __DARKLUA_BUNDLE_MODULES.load('l').CheckAll
+local PlayerTracker = __DARKLUA_BUNDLE_MOD213 ULES.load('m')
+local PlayerTrackerPlayerType = __DARKLUA_BUNDLE_MODULES.load('k')
+local Utilities = __DARKLUA_BUNDLE_MODULES.load('b')
+local Configuration = __DARKLUA_BUNDLE_MODULES.load('d')
+local SharedDataTypes = __DARKLUA_BUNDLE_MODULES.load('n')
+local MiscTypes = __DARKLUA_BUNDLE_MODULES.load('o')
+local Workspace = game:GetService('Workspace')
+local CurrentCamera = Workspace.CurrentCamera
+local ZeroVector2 = Vector2 .zero
+local mathfloor = math.floor
+local Vertices = {
+Vector3 .new(-1, -1, -1),
+Vector3 .new(-1, 1, -1),
+Vector3 .new(-1, 1, 1),
+Vector3 .new(-1, -1, 1),
+Vector3 .new(1, -1, -1),
+Vector3 .new(1, 1, -1),
+Vector3 .new(1, 1, 1),
+Vector3 .new(1, -1, 1),
+}
+local GetCorners = function(ModelCFrame, ModelSize, _ScaleFactor)
+local ScaleFactor = _ScaleFactor or Configuration.lynx.ClosestPoint.ReductionPercentage / 100
+
+ModelSize = ModelSize * ScaleFactor
+
+local HalfSize = ModelSize / 2
+local Corners = table.create(#Vertices)
+
+for i, Vertex in ipairs(Vertices)do
+local Corner3D = (ModelCFrame + (HalfSize * Vertex)).Position
+
+Corner3D = CurrentCamera:WorldToViewportPoint(Corner3D)
+
+local Corner2D = Vector2 .new(Corner3D.X, Corner3D.Y)
+
+Corners[i] = Corner2D
+end
+
+local MinPosition = CurrentCamera.ViewportSize:Min(unpack(Corners))
+local MaxPosition = ZeroVector2:Max(unpack(Corners))
+
+return {
+TopLeft = Utilities.ApplyVector2(MinPosition, mathfloor),
+TopRight = Utilities.ApplyVector2(Vector2 .new(MaxPosition.X, MinPosition.Y), mathfloor),
+BottomLeft = Utilities.ApplyVector2(Vector2 .new(MinPosition.X, MaxPosition.Y), mathfloor),
+BottomRight = Utilities.ApplyVector2(MaxPosition, mathfloor),
+}
+end
+local ClosestPlayer = function(LocalPlayerData, SharedData)
+local MousePosition = SharedData.MousePosition
+local ClosestPlayerData
+local Distance = 1 / 0
+
+for _, PlayerData in ipairs(PlayerTracker.Players)do
+if not CheckAll(LocalPlayerData, PlayerData) then
+continue
+end
+
+local Position = PlayerData.ScreenPosition
+local Magnitude = (Vector2 .new(Position.X, Position.Y) - MousePosition).Magnitude
+
+if Magnitude < Distance then
+ClosestPlayerData = PlayerData
+Distance = Magnitude
+end
+end
+
+return ClosestPlayerData
+end
+local ClosestPartA = function(PlayerData, Character, SharedData)
+local MousePosition = SharedData.MousePosition
+local Parts = {}
+
+for Name, Part in pairs(PlayerData.BodyParts)do
+local Position
+
+if Name == 'HumanoidRootPart' then
+Position = PlayerData.ScreenPosition
+else
+Position = Utilities.WorldToScreen(Part.Position)
+end
+
+local Distance = (MousePosition - Position).Magnitude
+
+table.insert(Parts, {
+Part = Part,
+Distance = Distance,
+})
+end
+
+table.sort(Parts, function(a, b)
+return a.Distance < b.Distance
+end)
+
+SharedData.TargetParts = Parts
+
+return Parts[1] and Parts[1].Part
+end
+local InsidePolygon = function(Point, Corners)
+local numCorners = #Corners
+local j = numCorners
+local oddNodes = false
+
+for i = 1, numCorners do
+if (Corners[i].Y < Point.Y and Corners[j].Y >= Point.Y) or (Corners[j].Y < Point.Y and Corners[i].Y >= Point.Y) then
+if Corners[i].X + (Point.Y - Corners[i].Y) / (Corners[j].Y - Corners[i].Y) * (Corners[j].X - Corners[i].X) < Point.X then
+oddNodes = not oddNodes
+end
+end
+
+j = i
+end
+
+return oddNodes
+end
+local ClosestPartB = function(Character, SharedData)
+local MousePosition = SharedData.MousePosition
+local MouseX = MousePosition.X
+local MouseY = MousePosition.Y
+local LowestPartY = 0
+local InPart
+local CentreX = Utilities.WorldToScreen(Character.HumanoidRootPart.Position).X
+local RightFootX = Utilities.WorldToScreen(Character.RightFoot.Position).X
+local PossibleParts = {}
+
+for _, Part in ipairs(Character:GetChildren())do
+if not (Part:IsA('BasePart') and Part.Name ~= 'HumanoidRootPart') then
+continue
+end
+
+local Corners = GetCorners(Part.CFrame, Part.Size)
+local TopLeft = Corners.TopLeft
+local BottomRight = Corners.BottomRight
+
+if InsidePolygon(MousePosition, {
+Corners.TopLeft,
+Corners.BottomLeft,
+Corners.BottomRight,
+Corners.TopRight,
+}) then
+InPart = Part
+
+break
+end
+if BottomRight.Y > LowestPartY then
+LowestPartY = BottomRight.Y
+end
+
+local WithinYBounds = MouseY >= TopLeft.Y and MouseY <= BottomRight.Y
+
+if WithinYBounds then
+table.insert(PossibleParts, {
+Part = Part,
+TopLeft = TopLeft.X,
+BottomRight = BottomRight.X,
+})
+end
+end
+
+if InPart then
+return InPart
+elseif #PossibleParts > 0 then
+if #PossibleParts == 1 then
+return PossibleParts[1].Part
+end
+
+local Right = MouseX > CentreX
+
+table.sort(PossibleParts, function(a, b)
+if Right then
+return a.BottomRight > b.BottomRight
+else
+return a.TopLeft < b.TopLeft
+end
+end)
+
+return PossibleParts[1].Part
+elseif MouseY >= LowestPartY then
+local Right = MouseX > CentreX
+local BackView = RightFootX > CentreX
+
+if Right then
+return BackView and Character.RightFoot or Character.LeftFoot
+else
+return BackView and Character.LeftFoot or Character.RightFoot
+end
+else
+return Character.Head
+end
+end
+local ClosestPoint = function(
+Part,
+_Point,
+_ReductionPercentage,
+Center,
+SharedData
+)
+local ClosestPointConfig = Configuration.lynx.ClosestPoint
+local Point = _Point or SharedData.MousePosition
+local ReductionPercentage = _ReductionPercentage or ClosestPointConfig.ReductionPercentage
+
+if Center == nil then
+Center = ClosestPointConfig.Center
+end
+
+local PointRay = CurrentCamera:ViewportPointToRay(Point.X, Point.Y)
+local Intersection = PointRay.Origin + (PointRay.Direction * PointRay.Direction:Dot(Part.Position - PointRay.Origin))
+local Transform = Part.CFrame:PointToObjectSpace(Intersection)
+local ReducedSize = (Part.Size - (Part.Size * ReductionPercentage / 100)) * (Center and Vector3 .new(1, 1, 0) or 1)
+local HalfSize = ReducedSize / 2
+
+return Part.CFrame * Vector3 .new(math.clamp(Transform.X, -HalfSize.X, HalfSize.X), math.clamp(Transform.Y,
+-HalfSize.Y, HalfSize.Y), math.clamp(Transform.Z, -HalfSize.Z, HalfSize.Z))
+end
+
+return {
+GetCorners = GetCorners,
+ClosestPlayer = ClosestPlayer,
+CheckAll = CheckAll,
+ClosestPartA = ClosestPartA,
+ClosestPartB = ClosestPartB,
+ClosestPoint = ClosestPoint,
+}
+end
+function __DARKLUA_BUNDLE_MODULES.q()
+local Configuration = __DARKLUA_BUNDLE_MODULES.load('d')
+local Players = game:GetService('Players')
+local ReplicatedStorage = game:GetService('ReplicatedStorage')
+local PlaceId = game.PlaceId
+local LocalPlayer = Players.LocalPlayer
+local GameType = 'N/A'
+local DaHoodId = {2788229376, 7213786345, 16033173781}
+local HoodGodModesId = {9825515356}
+local HoodModdedId = {5602055394, 7951883376}
+local PlaceVersions = {
+[2788229376] = 0,
+[7213786345] = 0,
+[16033173781] = 0,
+[9825515356] = 0,
+[5602055394] = 0,
+[7951883376] = 0,
+}
+local StoredGameVersion = PlaceVersions[PlaceId]
+
+if StoredGameVersion and StoredGameVersion ~= game.PlaceVersion and not Configuration.Misc.Safety then
+local Message =
+[[This game has updated and the script has not been tested yet! Safety is not guaranteed.
+
+To continue at your own risk, set `Safety` to `false` in the misc]]
+
+task.defer(function()
+LocalPlayer:Kick(Message)
+end)
+error(Message)
+end
+
+local Weapons = {
+Pistols = {},
+Shotguns = {},
+Automatics = {},
+Other = {},
+}
+
+if table.find(DaHoodId, PlaceId) then
+GameType = 'DaHood' -- adding more soon to be up to date
+Weapons = {
+Pistols = {
+'[Revolver]',
+'[Glock]',
+'[Silencer]',
+},
+Shotguns = {
+'[Shotgun]',
+'[Double-Barrel SG]',
+'[TacticalShotgun]',
+},
+Automatics = {
+'[SMG]',
+'[P90]',
+'[LMG]',
+'[AR]',
+'[SilencerAR]',
+'[AK47]',
+'[DrumGun]',
+},
+Other = {
+'[Rifle]',
+},
+}
+elseif table.find(HoodGodModesId, PlaceId) then
+GameType = 'HoodGodModes'
+Weapons = {
+Pistols = {
+'[Revolver]',
+'[Glock]',
+'[Silencer]',
+},
+Shotguns = {
+'[Shotgun]',
+'[DoubleBarrel]',
+'[TacticalShotgun]',
+},
+Automatics = {
+'[SMG]',
+},
+Other = {},
+}
+elseif table.find(HoodModdedId, PlaceId) then
+GameType = 'HoodModded'
+Weapons = {
+Pistols = {
+'[Sniper]',
+'[Glock]',
+'[R8]',
+'[Revolver]',
+'[Deagle]',
+},
+Shotguns = {
+'[TacticalShotgun]',
+'[Shotgun]',
+'[Double Barrel SG]',
+},
+Automatics = {
+'[AA12]',
+'[AK-47]',
+'[Akimbo SMG]',
+'[AR]',
+'[Famas]',
+'[Golden AK-47]',
+'[HMinigun]',
+'[LMG]',
+'[LMinigun]',
+'[P90]',
+'[Tec-9]',
+'[UMP]',
+'[Vector]',
+'[DrumGun]',
+'[SCAR-H]',
+'[Silencer]',
+'[SilencerAR]',
+'[SMG]',
+},
+Other = {
+'AUG',
+'[RPG]',
+'[Grenade Launcher]',
+'[Railgun]',
+'[Flamethrower]',
+'[FlareGun]',
+'[Ray Gun]',
+'[Homing Launcher ]',
+'[PlasmaRifle]', -- //  some mod wanted me to add this :sob:
+},
+}
+else
+local Message = 'Game NOT supported ping @kodabladi and ill add it!'
+
+task.defer(function()
+LocalPlayer:Kick(Message)
+end)
+error(Message)
+end
+
+local UpdateMouseArgs = {
+[2788229376] = 'UpdateMousePosI', -- adding like 100 games soon im just too lazy for now
+[4106313503] = 'UpdateMousePosI',
+[5602055394] = 'MousePos',
+[7951883376] = 'MousePos',
+[9825515356] = 'GetMousePos',
+[17897702920] =  'UpdateMousePos',
+[14412436145] = 'MOUSE',
+[9825515356] = 'MousePosUpdate',
+[11867820563] = 'UpdateMousePos'
+
+
+}
+local MainEvent
+
+if table.find(HoodModdedId, PlaceId) then
+MainEvent = ReplicatedStorage:FindFirstChild('Bullets')
+else
+MainEvent = ReplicatedStorage:FindFirstChild('MainEvent')
+end
+if not (MainEvent and MainEvent:IsA('RemoteEvent')) then
+local Message = 'Remote not found!'
+
+task.defer(function()
+LocalPlayer:Kick(Message)
+end)
+error(Message)
+end
+
+return {
+DaHoodId = DaHoodId,
+HoodModdedId = HoodModdedId,
+HoodGodModesId = HoodGodModesId,
+GameType = GameType,
+Weapons = Weapons,
+UpdateMouseArg = UpdateMouseArgs[PlaceId] or 'I',
+MainEvent = MainEvent,
+}
+end
+function __DARKLUA_BUNDLE_MODULES.r()
+local Utilities = __DARKLUA_BUNDLE_MODULES.load('b')
+local Configuration = __DARKLUA_BUNDLE_MODULES.load('d')
+local SharedDataTypes = __DARKLUA_BUNDLE_MODULES.load('n')
+local PlayerDataTypes = __DARKLUA_BUNDLE_MODULES.load('k')
+local ConfigurationTypes = __DARKLUA_BUNDLE_MODULES.load('a')
+local ThisConfiguration = Configuration.AutoPrediction
+local Players = game:GetService('Players')
+local Stats = game:GetService('Stats')
+local Workspace = game:GetService('Workspace')
+local CurrentCamera = Workspace.CurrentCamera
+local LocalPlayer = Players.LocalPlayer
+local DataPing = (Stats).Network.ServerStatsItem['Data Ping']
+local Calculate = function(Target)
+local Ping = tonumber(tostring(DataPing:GetValueString()):split(' ')[1]) or 0
+
+Ping = Ping / 1000
+
+local RangePrediction = 0
+local TargetPrimaryPart = Target.Character and Target.Character.PrimaryPart
+local LocalPrimaryPart = LocalPlayer.Character and LocalPlayer.Character.PrimaryPart
+
+if TargetPrimaryPart and LocalPrimaryPart then
+RangePrediction = (TargetPrimaryPart.Position - LocalPrimaryPart.Position).Magnitude * ThisConfiguration.RangeCoefficient
+end
+
+local Prediction = Ping + ThisConfiguration.AdditionalInterval + RangePrediction
+
+return tonumber(Utilities.math_round(Prediction, ThisConfiguration.Precision)) or 0
+end
+local GetPrediction = function(Target, InAir, Data)
+if Configuration.AutoPrediction.Enabled and Target then
+return Calculate(Target)
+end
+if InAir then
+return Data.Air
+else
+return Data.Ground
+end
+end
+local ApplyPrediction = function(
+PartVelocity,
+PartPosition,
+Prediction
+)
+local CurrentCameraCFrame = CurrentCamera.CFrame
+local RelativePartVelocity = CurrentCameraCFrame:VectorToObjectSpace(PartVelocity)
+local PredictionVelocity = RelativePartVelocity * Prediction * ThisConfiguration.VelocityMultiplier
+local PredictedPosition = PartPosition + CurrentCameraCFrame:VectorToWorldSpace(PredictionVelocity)
+
+return PredictedPosition
+end
+local IsAntiAim = function(Target)
+return (Target.Velocity * Vector3 .new(1, 0, 1)).Magnitude > 20
+end
+local PredictedPosition3D = function(Mode, Data)
+local Target = Data.Target
+
+if not Target then
+return
+end
+
+local TargetInstance = Target.Instance
+local PredictionCalc = Data.Prediction or Calculate(TargetInstance)
+local HumanoidRootPart = Target.BodyParts.HumanoidRootPart
+local Velocity = IsAntiAim(Target) and Target.Velocity or (TargetInstance.Character and HumanoidRootPart and HumanoidRootPart.AssemblyLinearVelocity)
+
+if not Velocity then
+return
+end
+
+local Predicted
+local Prediction
+
+if Data.ZPrediction then
+Prediction = Vector3 .new(PredictionCalc, 0, Data.ZPrediction)
+else
+Prediction = PredictionCalc
+end
+if Mode == 'ClosestPoint' then
+Predicted = ApplyPrediction(Velocity, Data.ClosestPoint, Prediction)
+elseif Mode == 'ClosestPart' then
+Predicted = ApplyPrediction(Velocity, Data.HitPosition, Prediction)
+elseif Mode == 'Torso' then
+Predicted = ApplyPrediction(Velocity, Data.TorsoPosition, Prediction)
+elseif typeof(Mode) == 'Instance' then
+Predicted = ApplyPrediction(Velocity, Mode.Position, Prediction)
+elseif typeof(Mode) == 'Vector3' then
+Predicted = ApplyPrediction(Velocity, Mode, Prediction)
+else
+error('invalid mode for pred')
+end
+
+return Predicted
+end
+local PredictedPosition = function(Mode, Data)
+local Predicted3D = PredictedPosition3D(Mode, Data)
+
+if not Predicted3D then
+return
+end
+
+local Predicted2D = Utilities.WorldToScreen(Predicted3D)
+
+return Predicted2D, Predicted3D
+end
+
+return {
+Calculate = Calculate,
+GetPrediction = GetPrediction,
+PredictedPosition = PredictedPosition,
+PredictedPosition3D = PredictedPosition3D,
+}
+end
+function __DARKLUA_BUNDLE_MODULES.s()
+local ConfigurationTypes = __DARKLUA_BUNDLE_MODULES.load('a')
+local SharedDataTypes = __DARKLUA_BUNDLE_MODULES.load('n')
+local Aiming = __DARKLUA_BUNDLE_MODULES.load('p')
+local Utilities = __DARKLUA_BUNDLE_MODULES.load('b')
+local PredictionM = __DARKLUA_BUNDLE_MODULES.load('r')
+local Workspace = game:GetService('Workspace')
+local CurrentCamera = Workspace.CurrentCamera
+local ApplyDrawingProperties = function(Object, Distance, Properties)
+for i, v in pairs(Properties)do
+if i == 'Type' then
+continue
+end
+if typeof(v) == 'function' then
+v = (v)(Distance, Properties)
+end
+if i == 'Radius' then
+v = v * 3
+end
+
+Object[i] = v
+end
+
+return Object
+end
+local CreateDrawingObject = function(Properties)
+local Object = Drawing.new((Properties.Type))
+
+return ApplyDrawingProperties(Object, 0, Properties)
+end
+local DefualtFOVObject = {
+ChecksEnabled = false,
+Mode = 'Sticky',
+Prediction = false,
+Closest = false,
+Torso = false,
+VisibleIfTarget = false,
+VisibleColor = nil,
+CornersScaleFactor = nil,
+Properties = {
+Type = 'Circle',
+},
+}
+local FOVObject = {}
+
+FOVObject.__index = FOVObject
+
+do
+function FOVObject.new(Parent, Data)
+local self = setmetatable({}, FOVObject)
+local CopyFOVObject = (Utilities.DeepCopy(DefualtFOVObject))
+
+Data = (Utilities.CombineTables(CopyFOVObject, Data))
+self.Object = CreateDrawingObject(Data.Properties)
+self.Parent = Parent
+self.Data = Data
+self.Properties = Data.Properties
+
+return self
+end
+function FOVObject.SharedDataPrediction(self, SharedData)
+local Target = SharedData.Target
+local TargetPlayer = Target and Target.Instance
+local SharedDataClone = SharedData:Clone()
+
+SharedDataClone.Prediction = PredictionM.GetPrediction(TargetPlayer, SharedData.InAir, self.Parent.Prediction)
+
+return SharedDataClone
+end
+function FOVObject.OverridePosition(self, SharedData)
+local Closest = self.Data.Closest
+
+if self.Data.Prediction then
+local PredictedMode = Closest and 'ClosestPoint' or 'Torso'
+
+return PredictionM.PredictedPosition(PredictedMode, self:SharedDataPrediction(SharedData))
+else
+local SharedPosition = Closest and SharedData.ClosestPoint or SharedData.TorsoPosition
+
+return Utilities.WorldToScreen(SharedPosition)
+end
+end
+function FOVObject.EarlyReturn(self)
+self:SetVisible(false)
+end
+function FOVObject.SetVisible(self, Visible)
+self.Properties.Visible = Visible
+self.Object.Visible = Visible
+end
+function FOVObject.IsParentEnabled(self)
+if not self.Parent or self.Parent.Enabled == nil then
+return true
+end
+
+return self.Parent.Enabled
+end
+function FOVObject.Check(self, SharedData)
+if not self:IsParentEnabled() or (self.Data.VisibleIfTarget and not SharedData.Target) then
+self:EarlyReturn()
+
+return false
+end
+if not self.Data.ChecksEnabled then
+self.Properties.Color = self.Data.VisibleColor
+
+return true
+end
+
+local OverridePosition
+
+if self.Data.Mode == 'Mouse' then
+OverridePosition = self:OverridePosition(SharedData)
+end
+
+local IsInside = Utilities.IsPointInDrawing(self.Object, self.Properties.Type, SharedData.MousePosition, OverridePosition)
+local VisibleColor = self.Data.VisibleColor
+
+if VisibleColor then
+self.Properties.Color = IsInside and VisibleColor or self.Properties.Color
+end
+
+return IsInside
+end
+function FOVObject.RenderMouse(self, SharedData)
+if not self:IsParentEnabled() then
+self:EarlyReturn()
+
+return
+end
+
+local Properties = self.Properties
+local MousePosition = SharedData.MousePosition
+
+Properties.Position = MousePosition
+
+ApplyDrawingProperties(self.Object, 0, Properties)
+end
+function FOVObject.Render(self, Data, SharedData)
+local Mode = self.Data.Mode
+
+if not Data then
+if Mode == 'Mouse' then
+self:RenderMouse(SharedData)
+end
+
+return
+end
+if not self:IsParentEnabled() then
+self:EarlyReturn()
+
+return
+end
+
+local Properties = self.Properties
+local Distance = Data.Distance
+local PropertiesSize = Properties.Size
+local Size
+
+if typeof(PropertiesSize) == 'function' then
+Size = PropertiesSize(Distance, Properties)
+else
+Size = PropertiesSize
+end
+
+local ScaleFactor = 1
+
+if typeof(Size) == 'Vector2' then
+ScaleFactor = 1 / (Data.TorsoP3 .Z * math.tan(math.rad(CurrentCamera.FieldOfView / 2)) * 2) * 100
+end
+
+local MousePosition = SharedData.MousePosition
+local AnchorPosition = self.Data.Closest and Data.ClosestP or Data.TorsoP
+local Position
+
+if Mode == 'Mouse' then
+Position = MousePosition
+elseif Mode == 'Sticky' then
+if self.Data.Prediction and SharedData.Target then
+Position = self:OverridePosition(SharedData) or AnchorPosition
+else
+Position = AnchorPosition
+end
+else
+error('invalid fov mode')
+end
+
+local PropertiesClone = (Utilities.DeepCopy(Properties))
+local HasSize = self.Properties.Type == 'Square'
+
+if HasSize then
+local Size2D
+
+if typeof(Size) == 'Vector2' then
+Size2D = Size * ScaleFactor
+PropertiesClone.Size = Size2D
+else
+local Size3D
+
+if not Size then
+Size3D = Data.CharacterSize
+else
+Size3D = Size
+end
+
+local Corners = Aiming.GetCorners(Data.CharacterCFrame, Size3D, self.Data.CornersScaleFactor)
+local MinPosition = Corners.TopLeft:Min(AnchorPosition)
+local MaxPosition = Corners.BottomRight:Max(AnchorPosition)
+
+Size2D = MaxPosition - MinPosition
+PropertiesClone.Size = Size2D
+end
+
+Position = Position - Size2D / 2
+end
+if PropertiesClone.VisibleColor then
+PropertiesClone.Color = nil
+end
+
+PropertiesClone.Position = Position
+
+ApplyDrawingProperties(self.Object, Distance, PropertiesClone)
+end
+end
+
+return FOVObject
+end
+function __DARKLUA_BUNDLE_MODULES.t()
+local ConfigurationTypes = __DARKLUA_BUNDLE_MODULES.load('a')
+local FOVObject = __DARKLUA_BUNDLE_MODULES.load('s')
+local SharedDataTypes = __DARKLUA_BUNDLE_MODULES.load('n')
+local FOVObjects = {}
+local FOVChecks = {}
+local Initialise = function(Name, Parent, Data)
+if FOVObjects[Name] then
+error("FOV object with name '" .. Name .. "' already exists")
+end
+
+local Object = FOVObject.new(Parent, Data)
+
+FOVObjects[Name] = Object
+
+return Object
+end
+local CheckAll = function(SharedData, Data)
+for Name, Object in pairs(FOVObjects)do
+debug.profilebegin('FOV - Object')
+debug.profilebegin('FOV - Render')
+Object:Render(Data, SharedData)
+debug.profileend()
+debug.profilebegin('FOV - Check')
+
+FOVChecks[Name] = Object:Check(SharedData)
+
+debug.profileend()
+debug.profileend()
+end
+
+return FOVChecks
+end
+local MakeAllInvisible = function()
+for _, Object in pairs(FOVObjects)do
+if Object.Data.VisibleIfTarget then
+Object:SetVisible(false)
+end
+end
+end
+
+return {
+Initialise = Initialise,
+MakeAllInvisible = MakeAllInvisible,
+CheckAll = CheckAll,
+FOVChecks = FOVChecks,
+}
+end
+function __DARKLUA_BUNDLE_MODULES.u()
+local Game = __DARKLUA_BUNDLE_MODULES.load('q')
+local PredictionM = __DARKLUA_BUNDLE_MODULES.load('r')
+local Utilities = __DARKLUA_BUNDLE_MODULES.load('b')
+local FOV = __DARKLUA_BUNDLE_MODULES.load('t')
+local FOVChecks = FOV.FOVChecks
+local Configuration = __DARKLUA_BUNDLE_MODULES.load('d')
+local PlayerTracker = __DARKLUA_BUNDLE_MODULES.load('m')
+local SharedDataTypes = __DARKLUA_BUNDLE_MODULES.load('n')
+local ThisConfiguration = Configuration.Redirection
+local Workspace = game:GetService('Workspace')
+local Players = game:GetService('Players')
+local CurrentCamera = Workspace.CurrentCamera
+local LocalPlayer = Players.LocalPlayer
+local LocalPlayerData = PlayerTracker:GetPlayerByInstance(LocalPlayer)
+local MainEvent = Game.MainEvent
+local UpdateMouseArg = Game.UpdateMouseArg
+local AntiCurveFOV
+local Check = function()
+return (ThisConfiguration.Enabled and ThisConfiguration.Default) and (Utilities.CheckChance(ThisConfiguration.HitChance)) and FOVChecks['Redirection']
+end
+local WillCurve = function(Point3D)
+if not (ThisConfiguration.AntiCurve.Enabled and AntiCurveFOV) then
+return false
+end
+
+local OurCharacter = LocalPlayer.Character
+local raycastParms = RaycastParams.new()
+
+raycastParms.FilterDescendantsInstances = {CurrentCamera}
+raycastParms.FilterType = Enum.RaycastFilterType.Exclude
+
+if OurCharacter then
+table.insert(raycastParms.FilterDescendantsInstances, OurCharacter)
+end
+if not LocalPlayerData then
+LocalPlayerData = PlayerTracker:GetPlayerByInstance(LocalPlayer)
+
+if not LocalPlayerData then
+return true
+end
+end
+
+local Origin
+local CurrentGun = LocalPlayerData.Guns:GetCurrentGun()
+
+if CurrentGun and CurrentGun.Handle and CurrentGun.ShootBBGUI then
+Origin = CurrentGun.Handle.Position + CurrentGun.Handle.CFrame:VectorToWorldSpace(CurrentGun.ShootBBGUI.StudsOffsetWorldSpace)
+else
+Origin = CurrentCamera.CFrame.Position
+end
+
+local RaycastResult = Workspace:Raycast(Origin, (Point3D - Origin) * 2, raycastParms)
+
+if not RaycastResult then
+return true
+end
+
+local HitPosition = RaycastResult.Position
+local HitPosition2D = Utilities.WorldToScreen(HitPosition)
+local InsideFOV = Utilities.IsPointInDrawing(AntiCurveFOV.Object, AntiCurveFOV.Properties.Type, HitPosition2D)
+
+return InsideFOV == false
+end
+local Initialise = function()
+AntiCurveFOV = FOV.Initialise('AntiCurve', ThisConfiguration.AntiCurve, ThisConfiguration.AntiCurve.FOV)
+end
+local Main = function(Data)
+if not (Check() and Data.Target and Data.TargetChecksPassed) then
+return
+end
+
+local Target = Data.Target
+local Humanoid = (((Target.Instance.Character)).Humanoid)
+
+if not Humanoid then
+return
+end
+
+local InAir = Humanoid:GetState() == Enum.HumanoidStateType.Freefall
+local Hit
+local SharedDataClone = Data:Clone()
+
+SharedDataClone.Prediction = PredictionM.GetPrediction(Target.Instance, InAir, ThisConfiguration.Prediction)
+
+if Target.Velocity.Magnitude < 0.2 or not Configuration.lynx.ClosestPoint.UseV2 then
+Hit = PredictionM.PredictedPosition3D('ClosestPoint', SharedDataClone)
+else
+local PredictedPositionTorso3D = PredictionM.PredictedPosition3D('Torso', SharedDataClone)
+local PredictedPositionPoint3D = PredictionM.PredictedPosition3D('ClosestPoint', SharedDataClone)
+
+if not (PredictedPositionTorso3D and PredictedPositionPoint3D) then
+return
+end
+
+Hit = Vector3 .new(PredictedPositionTorso3D.X, PredictedPositionPoint3D.Y, PredictedPositionTorso3D.Z)
+end
+if not Hit or WillCurve(Hit) then
+return
+end
+if Game.GameType == 'HoodModded' then
+MainEvent:FireServer(UpdateMouseArg, Hit, 'P')
+else
+MainEvent:FireServer(UpdateMouseArg, Hit)
+end
+end
+
+return {
+Main = Main,
+Initialise = Initialise,
+}
+end
+function __DARKLUA_BUNDLE_MODULES.v()
+local PlayerDataType = __DARKLUA_BUNDLE_MODULES.load('k')
+local FOVChecks = __DARKLUA_BUNDLE_MODULES.load('t').FOVChecks
+local Configuration = __DARKLUA_BUNDLE_MODULES.load('d')
+local ThisConfiguration = Configuration.Triggerbot
+local LastClick = 0
+local Check = function(LocalPlayerData)
+local GunAmmo
+
+if LocalPlayerData.Guns.CurrentGunIndex then
+GunAmmo = LocalPlayerData.Guns.Guns[LocalPlayerData.Guns.CurrentGunIndex].Ammo
+else
+return false
+end
+
+return (ThisConfiguration.Enabled and ThisConfiguration.Default) and (LocalPlayerData.ReloadingInstance ~= nil and not LocalPlayerData.ReloadingInstance.Value) and FOVChecks['Triggerbot'] and (GunAmmo ~= nil and GunAmmo.Value ~= 0) and (os.clock() - LastClick >= ThisConfiguration.Cooldown)
+end
+
+return function(LocalPlayerData)
+if not Check(LocalPlayerData) then
+return
+end
+
+mouse1click()
+end
+end
+function __DARKLUA_BUNDLE_MODULES.w()
+local PredictionM = __DARKLUA_BUNDLE_MODULES.load('r')
+local Utilities = __DARKLUA_BUNDLE_MODULES.load('b')
+local Configuration = __DARKLUA_BUNDLE_MODULES.load('d')
+local ConfigurationTypes = __DARKLUA_BUNDLE_MODULES.load('a')
+local SharedDataTypes = __DARKLUA_BUNDLE_MODULES.load('n')
+local ThisConfiguration = Configuration.Camlock
+local TweenService = game:GetService('TweenService')
+local UserInputService = game:GetService('UserInputService')
+local AimTime
+local AirGroundSelect = function(InAir, Data)
+return InAir and Data.Air or Data.Ground
+end
+local RunAssist = function(Position, Data, SharedData)
+local ScreenPosition
+
+if typeof(Position) == 'Vector3' then
+ScreenPosition = Utilities.WorldToScreen(Position)
+else
+ScreenPosition = Position
+end
+
+local MousePosition = SharedData.MousePosition
+local Displacement = ScreenPosition - MousePosition
+local Distance = Displacement.Magnitude
+
+if Distance < 5 then
+return
+end
+
+local StrengthConstant = Data.Strength
+local Strength = StrengthConstant / Distance
+local Movement = Displacement * Strength
+
+mousemoverel(Movement.X, Movement.Y)
+end
+local Runsmoothing = function(Position, Data, SharedData)
+if not AimTime then
+error('missing aimtime?')
+end
+
+local CurrentAimTime = math.clamp(os.clock() - AimTime, 0, 1)
+local Alpha
+
+if Data.smoothingStyle == 'lynx' then
+local t = CurrentAimTime
+
+Alpha = (0.5 - 0.5 * math.cos(math.pi * t)) * (1 - math.abs(1 - t) ^ 2) * (math.sqrt((2 - t) * t))
+else
+Alpha = TweenService:GetValue(CurrentAimTime, Data.smoothingStyle, Data.smoothingDirection)
+end
+
+local ScreenPosition
+
+if typeof(Position) == 'Vector3' then
+ScreenPosition = Utilities.WorldToScreen(Position)
+else
+ScreenPosition = Position
+end
+
+local MousePosition = UserInputService:GetMouseLocation()
+local SmoothedPosition = MousePosition:Lerp(ScreenPosition, Alpha * Data.Smoothing)
+local Displacement = SmoothedPosition - MousePosition
+
+mousemoverel(Displacement.X, Displacement.Y)
+end
+local ModeResolve = {
+Assist = RunAssist,
+smoothing = Runsmoothing,
+}
+local Check = function()
+return ThisConfiguration.Enabled and ThisConfiguration.Default
+end
+
+return function(SharedData)
+local CurrentTarget = SharedData.Target
+
+if not Check() or not CurrentTarget then
+AimTime = nil
+
+return
+elseif not AimTime then
+AimTime = os.clock()
+end
+
+local Character = CurrentTarget.Instance.Character
+
+if not Character then
+return
+end
+
+local InAir = SharedData.InAir
+local Part
+local PartName = AirGroundSelect(InAir, ThisConfiguration.Part)
+
+if typeof(PartName) == 'table' then
+for _, v in ipairs(SharedData.TargetParts)do
+if table.find(PartName, v.Part.Name) then
+Part = v.Part
+
+break
+end
+end
+else
+local TempPart = Character:FindFirstChild(PartName)
+
+if not (TempPart and TempPart:IsA('BasePart')) then
+return
+end
+
+Part = TempPart
+end
+
+local Mode = AirGroundSelect(InAir, (ThisConfiguration.Mode))
+local ModeData = AirGroundSelect(InAir, ThisConfiguration[Mode])
+local SharedDataClone = SharedData:Clone()
+
+SharedDataClone.Prediction = PredictionM.GetPrediction(CurrentTarget.Instance, InAir, ThisConfiguration.Prediction)
+
+local PredictedPosition = PredictionM.PredictedPosition(Part, SharedDataClone)
+
+if not PredictedPosition then
+return
+end
+
+local ModeFunction = ModeResolve[Mode]
+
+ModeFunction(PredictedPosition, ModeData, SharedData)
+end
+end
+function __DARKLUA_BUNDLE_MODULES.x()
+local Maid = __DARKLUA_BUNDLE_MODULES.load('g')
+local HttpService = game:GetService('HttpService')
+local UserInputService = game:GetService('UserInputService')
+local Binds = {}
+local Module = {
+TestMode = false,
+Maid = Maid.new(),
+}
+
+do
+function Module.GetAll()
+return Binds
+end
+function Module.Get(Id)
+local FoundI = -1
+
+for i, Bind in ipairs(Binds)do
+if Bind.Id == Id then
+FoundI = i
+
+break
+end
+end
+
+if FoundI == -1 then
+return nil, nil
+end
+
+return Binds[FoundI], FoundI
+end
+function Module.CharacterToKeyCode(Character, ErrorInvalid)
+if typeof(Character) == 'function' then
+return Module.CharacterToKeyCode(Character(), ErrorInvalid)
+end
+
+Character = Character:lower()
+
+if Character:match('mb%d') then
+return (((Enum.UserInputType))['MouseButton' .. Character:gsub('mb', '')])
+end
+if ErrorInvalid and #Character ~= 1 then
+error('invalid character')
+end
+
+for _, Keycode in pairs(Enum.KeyCode:GetEnumItems())do
+if Keycode.Value == Character:byte() then
+return Keycode
+end
+end
+
+if ErrorInvalid then
+error('cannot find character')
+end
+
+return nil
+end
+function Module.CreateBind(Data)
+local Keybind
+
+if typeof(Data.Keybind) == 'string' then
+Keybind = Module.CharacterToKeyCode(Data.Keybind, true) or Enum.KeyCode.Unknown
+else
+Keybind = (Data.Keybind)
+end
+
+local Id = Data.Id or HttpService:GenerateGUID()
+local Bind = {
+Callback = Data.Callback,
+ProcessedCheck = Data.ProcessedCheck or false,
+Hold = Data.Hold or false,
+State = Data.State or false,
+Id = Id,
+Keybind = Keybind,
+InternalKeybind = Enum.KeyCode.Unknown,
+InternalHold = false,
+}
+
+table.insert(Binds, Bind)
+
+return Id
+end
+function Module.Update(Id, Property, NewValue)
+local Bind = Module.Get(Id)
+
+if not Bind then
+return false
+end
+
+Bind[Property] = NewValue
+
+return true
+end
+function Module.UpdateKeybind(Id, NewKeybind)
+return Module.Update(Id, 'Keybind', NewKeybind)
+end
+function Module.UpdateCallback(Id, NewCallback)
+return Module.Update(Id, 'Callback', NewCallback)
+end
+function Module.RemoveBind(Id)
+local _, FoundI = Module.Get(Id)
+
+if not FoundI then
+return false
+end
+
+table.remove(Binds, FoundI)
+
+return true
+end
+function Module.CreateConnection()
+Module.Maid:NewTask(UserInputService.InputBegan:Connect(function(
+Input,
+gameProcessedEvent
+)
+for _, Bind in ipairs(Binds)do
+if typeof(Bind.Keybind) == 'function' then
+Bind.InternalKeybind = Bind.Keybind()
+else
+Bind.InternalKeybind = Bind.Keybind
+end
+
+local BindHold = Bind.Hold
+
+if typeof(BindHold) == 'function' then
+Bind.InternalHold = BindHold()
+else
+Bind.InternalHold = BindHold
+end
+
+local Keybind = Bind.InternalKeybind
+local Property = tostring(Keybind.EnumType)
+
+if ((Input)[Property] ~= Keybind) or (Bind.ProcessedCheck and gameProcessedEvent) then
+continue
+end
+if Bind.InternalHold then
+Bind.State = true
+else
+Bind.State = not Bind.State
+end
+
+Bind.Callback(Bind.State, Bind)
+end
+end), 'InputBegan')
+Module.Maid:NewTask(UserInputService.InputEnded:Connect(function(
+Input,
+gameProcessedEvent
+)
+for _, Bind in ipairs(Binds)do
+local BindHold = Bind.InternalHold
+
+if not BindHold then
+continue
+end
+
+local Keybind = Bind.InternalKeybind
+local Property = tostring(Keybind.EnumType)
+
+if ((Input)[Property] ~= Keybind) or (Bind.ProcessedCheck and gameProcessedEvent) then
+continue
+end
+
+Bind.State = false
+
+Bind.Callback(false, Bind)
+end
+end), 'InputEnded')
+end
+function Module.Destroy(KeepConnection)
+if not KeepConnection then
+Module.Maid:Destroy()
+end
+
+Binds = {}
+end
+end
+
+Module.CreateConnection()
+
+return Module
+end
+function __DARKLUA_BUNDLE_MODULES.y()
+local ConfigurationTypes = __DARKLUA_BUNDLE_MODULES.load('a')
+local DistanceCategory = function(Distance, DistanceCategories)
+local Converted = {}
+
+for DistanceType, UpperBound in pairs(DistanceCategories)do
+table.insert(Converted, {
+DistanceType = DistanceType,
+UpperBound = UpperBound,
+})
+end
+
+table.sort(Converted, function(a, b)
+return a.UpperBound < b.UpperBound
+end)
+
+local Highest = 1
+
+for i, Data in ipairs(Converted)do
+Highest = i
+
+if Data.UpperBound > Distance then
+break
+end
+end
+
+return Converted[Highest]
+end
+
+local function Apply(Parent, Data, Category)
+for i, v in pairs(Data)do
+local Child = Parent[i]
+
+if typeof(v) ~= 'table' then
+continue
+end
+if typeof(Child) == 'table' then
+Apply(Child, v, Category)
+
+continue
+end
+
+Parent[i] = v[Category.DistanceType]
+end
+
+return Data
+end
+
+return function(Root, Data, GunData, Distance)
+if not Data.Enabled then
+return
+end
+
+local Category = DistanceCategory(Distance, Data.distance)
+
+return Apply(Root, GunData, Category)
+end
+end
+function __DARKLUA_BUNDLE_MODULES.z()
+local SharedDataTypes = __DARKLUA_BUNDLE_MODULES.load('n')
+local Utilities = __DARKLUA_BUNDLE_MODULES.load('b')
+local SharedData = {
+Target = nil,
+TargetChecksPassed = false,
+TargetParts = {},
+InAir = false,
+ZPrediction = nil,
+Prediction = nil,
+ClosestPoint = Vector3 .new(),
+HitPosition = Vector3 .new(),
+TorsoPosition = Vector3 .new(),
+MousePosition = Vector2 .new(),
+Clone = function(self)
+return (Utilities.DeepCopy(self, {
+'Target',
+}))
+end,
+}
+
+return SharedData
+end
+function __DARKLUA_BUNDLE_MODULES.A()
+local Configuration = __DARKLUA_BUNDLE_MODULES.load('d')
+local ThisConfiguration = Configuration.TargetAim
+local KeybindHandler = __DARKLUA_BUNDLE_MODULES.load('x')
+local Aiming = __DARKLUA_BUNDLE_MODULES.load('p')
+local PlayerTracker = __DARKLUA_BUNDLE_MODULES.load('m')
+local SharedData = __DARKLUA_BUNDLE_MODULES.load('z')
+local PlayerTrackerPlayerType = __DARKLUA_BUNDLE_MODULES.load('k')
+local Checks = __DARKLUA_BUNDLE_MODULES.load('l')
+local Players = game:GetService('Players')
+local CamlockPlayer
+local TargetPlayer
+local LocalPlayer = Players.LocalPlayer
+local LocalPlayerData = PlayerTracker:GetPlayerByInstance(LocalPlayer)
+local CamlockBind = KeybindHandler.Get('Camlock')
+local Check = function()
+return ThisConfiguration.Enabled
+end
+
+KeybindHandler.CreateBind({
+Keybind = ThisConfiguration.TargetBind,
+ProcessedCheck = true,
+Callback = function()
+if CamlockPlayer then
+return
+end
+if TargetPlayer then
+TargetPlayer = nil
+
+return
+end
+if not Check() then
+return
+end
+
+TargetPlayer = Aiming.ClosestPlayer(LocalPlayerData, SharedData)
+
+return
+end,
+})
+
+local CamlockConfiguration = Configuration.Camlock
+
+KeybindHandler.CreateBind({
+Keybind = CamlockConfiguration.Keybind,
+ProcessedCheck = true,
+Callback = function()
+if CamlockPlayer then
+CamlockPlayer = nil
+
+return
+end
+if not Check() then
+return
+end
+
+CamlockPlayer = Aiming.ClosestPlayer(LocalPlayerData, SharedData)
+
+return
+end,
+})
+
+local GetTarget = function()
+if CamlockPlayer then
+if not Checks.Parts(CamlockPlayer) then
+return nil, false
+end
+
+local PlayerChecks = Aiming.CheckAll(LocalPlayerData, CamlockPlayer)
+
+return CamlockPlayer, PlayerChecks
+end
+if not Check() or not TargetPlayer then
+local ClosestPlayer = Aiming.ClosestPlayer(LocalPlayerData, SharedData)
+
+return ClosestPlayer, ClosestPlayer ~= nil
+end
+if TargetPlayer and Aiming.CheckAll(LocalPlayerData, TargetPlayer) then
+return TargetPlayer, true
+end
+
+return nil, false
+end
+local ResetTarget = function()
+CamlockPlayer = nil
+
+if not CamlockBind then
+CamlockBind = KeybindHandler.Get('Camlock')
+end
+if CamlockBind then
+CamlockBind.State = false
+
+CamlockBind.Callback(false, CamlockBind)
+end
+end
+
+LocalPlayerData.Signals:Connect('KOd', ResetTarget)
+LocalPlayerData.Signals:Connect('CharacterAdded', ResetTarget)
+
+return {
+GetTarget = GetTarget,
+ResetTarget = ResetTarget,
+}
+end
+function __DARKLUA_BUNDLE_MODULES.B()
+local Maid = __DARKLUA_BUNDLE_MODULES.load('g')
+local Configuration = __DARKLUA_BUNDLE_MODULES.load('d')
+local ThisConfiguration = Configuration.Macro
+local CoreGui = game:GetService('CoreGui')
+local VirtualInputManager = game:GetService('VirtualInputManager')
+local RunService = game:GetService('RunService')
+local BackpackHotbar = (CoreGui).RobloxGui.Backpack.Hotbar
+local RenderStepped = RunService.RenderStepped
+local RenderSteppedWait = RunService.RenderStepped.Wait
+local Check = function(Type)
+local Data = ThisConfiguration[Type]
+
+return Data.Enabled and Data.Default
+end
+local RunSpeed = function()
+if not Check('Speed') then
+return
+end
+
+local Data = ThisConfiguration.Speed
+local Type = Data.ScrollWheel and 'Mouse' or 'Normal'
+local Speed = Data.Speed / 100
+
+if Type == 'Normal' then
+task.wait(Speed)
+VirtualInputManager:SendKeyEvent(true, 'I', false, game)
+task.wait(Speed)
+VirtualInputManager:SendKeyEvent(true, 'O', false, game)
+elseif Type == 'Mouse' then
+task.wait(Speed)
+VirtualInputManager:SendMouseWheelEvent('0', '0', true, game)
+task.wait(Speed)
+VirtualInputManager:SendMouseWheelEvent('0', '0', false, game)
+end
+end
+local RunNoclip = function(Number)
+if not Check('Noclip') then
+return
+end
+if Number then
+for i = 1, 2 do
+keypress(0x30 + Number)
+keyrelease(0x30 + Number)
+end
+end
+end
+
+return function()
+local maid = Maid.new()
+local Number = nil
+
+for _, v in ipairs(BackpackHotbar:GetChildren())do
+if v.ToolName.Text ~= ThisConfiguration.Noclip.Gun then
+continue
+end
+
+Number = tonumber(v.Number.Text)
+
+break
+end
+
+maid:NewTask(BackpackHotbar.ChildAdded:Connect(function(v)
+if v.ToolName.Text ~= ThisConfiguration.Noclip.Gun then
+return
+end
+
+Number = tonumber(v.Number.Text)
+end), 'Number')
+maid:NewTask(BackpackHotbar.ChildRemoved:Connect(function(v)
+if v.ToolName.Text ~= ThisConfiguration.Noclip.Gun then
+return
+end
+
+Number = nil
+end), 'Number')
+maid:NewTask(task.spawn(function()
+while true do
+RenderSteppedWait(RenderStepped)
+RunSpeed()
+end
+end), 'Speed')
+maid:NewTask(task.spawn(function()
+while true do
+RenderSteppedWait(RenderStepped)
+RunNoclip(Number)
+end
+end), 'Noclip')
+
+return maid
+end
+end
+end
+
+local ConfigurationTypes = __DARKLUA_BUNDLE_MODULES.load('a')
+local Configuration = __DARKLUA_BUNDLE_MODULES.load('d')
+local VersionCheckConfig = Configuration.lynx.Settings.VersionCheck
+
+
+
+__DARKLUA_BUNDLE_MODULES.load('f')
+
+local Aiming = __DARKLUA_BUNDLE_MODULES.load('p')
+local Utilities = __DARKLUA_BUNDLE_MODULES.load('b')
+local Maid = __DARKLUA_BUNDLE_MODULES.load('g')
+local Redirection = __DARKLUA_BUNDLE_MODULES.load('u')
+local Triggerbot = __DARKLUA_BUNDLE_MODULES.load('v')
+local Camlock = __DARKLUA_BUNDLE_MODULES.load('w')
+local KeybindHandler = __DARKLUA_BUNDLE_MODULES.load('x')
+local ConfigRun = __DARKLUA_BUNDLE_MODULES.load('y')
+local FOV = __DARKLUA_BUNDLE_MODULES.load('t')
+local PlayerTracker = __DARKLUA_BUNDLE_MODULES.load('m')
+local MiscTypes = __DARKLUA_BUNDLE_MODULES.load('o')
+local SharedData = __DARKLUA_BUNDLE_MODULES.load('z')
+local TargetAim = __DARKLUA_BUNDLE_MODULES.load('A')
+local GameData = __DARKLUA_BUNDLE_MODULES.load('q')
+local UserInputService = game:GetService('UserInputService')
+local RunService = game:GetService('RunService')
+local Players = game:GetService('Players')
+local Workspace = game:GetService('Workspace')
+local CurrentCamera = Workspace.CurrentCamera
+local LocalPlayer = Players.LocalPlayer
+local Configs = {}
+
+for Name, Module in pairs(Configuration)do
+if Module.Keybind then
+KeybindHandler.CreateBind({
+Id = Name,
+Keybind = Module.Keybind,
+ProcessedCheck = true,
+State = Module.Default,
+Hold = function()
+return Module.Hold
+end,
+Callback = function(Value)
+Module.Default = Value
+
+return
+end,
+})
+end
+if Module.Config then
+Configs[Name] = Module.Config
+end
+if Module.FOV then
+FOV.Initialise(Name, Module, Module.FOV)
+end
+end
+
+Redirection.Initialise()
+
+for Name, Properties in pairs(Configuration.Visuals.FOVs)do
+local Parent
+
+if Name == 'PredictedClosest' then
+Parent = Configuration.Redirection
+end
+
+FOV.Initialise(Name, Parent, Properties)
+end
+
+local LocalPlayerData = PlayerTracker:GetPlayerByInstance(LocalPlayer)
+local ApplyConfigs = function(Distance)
+local Gun = LocalPlayerData.Guns:GetCurrentGun()
+
+if not Gun then
+return
+end
+
+local GunName = Gun.Instance.Name
+local GunType
+
+for Type, Guns in pairs(GameData.Weapons)do
+if table.find(Guns, GunName) then
+GunType = Type
+
+break
+end
+end
+
+if not GunType then
+warn('Unsupported gun type')
+
+return
+end
+
+for Name, Data in pairs(Configs)do
+ConfigRun(Configuration[Name], Data, Data[GunType], Distance)
+end
+end
+local IsGun = function(Child)
+return Child:IsA('Tool') and Child:FindFirstChild('GunScript') ~= nil
+end
+local LocalMaid = Maid.new()
+local OnCharacterAdded = function(Character)
+if not Character then
+return
+end
+
+LocalMaid:NewTask(Character.ChildAdded:Connect(function(child)
+if IsGun(child) then
+LocalMaid:NewTask((child).Activated:Connect(function()
+Redirection.Main(SharedData)
+end), 'GunActivated')
+
+return
+end
+end), 'CharacterChildAdded')
+end
+
+OnCharacterAdded(LocalPlayer.Character)
+LocalMaid:NewTask(LocalPlayer.CharacterAdded:Connect(OnCharacterAdded), 'CharacterAdded')
+
+local ResetLoop = function()
+SharedData.Target = nil
+SharedData.ClosestPartTime = nil
+
+FOV.MakeAllInvisible()
+
+SharedData.TargetParts = {}
+end
+local ProcessFOV = function(TargetCharacter)
+if not TargetCharacter then
+FOV.CheckAll(SharedData)
+
+return
+end
+
+local TorsoPosition = SharedData.TorsoPosition
+local ClosestPoint = SharedData.ClosestPoint
+local Distance = LocalPlayer:DistanceFromCharacter(ClosestPoint)
+local CharacterCFrame, CharacterSize = TargetCharacter:GetBoundingBox()
+local UpperTorsoScreen = CurrentCamera:WorldToViewportPoint(TorsoPosition)
+
+debug.profilebegin('FOV - Check All')
+FOV.CheckAll(SharedData, {
+Distance = Distance,
+CharacterCFrame = CharacterCFrame,
+CharacterSize = CharacterSize,
+ClosestP = Utilities.WorldToScreen(ClosestPoint),
+TorsoP3 = UpperTorsoScreen,
+TorsoP = Utilities.Vector3ToVector2(UpperTorsoScreen),
+})
+debug.profileend()
+end
+
+LocalMaid:NewTask(RunService.Heartbeat:Connect(LPH_NO_VIRTUALIZE(function(dT)
+SharedData.MousePosition = UserInputService:GetMouseLocation()
+LocalPlayerData = LocalPlayerData or PlayerTracker:GetPlayerByInstance(LocalPlayer)
+
+if not LocalPlayerData then
+ProcessFOV()
+ResetLoop()
+
+return nil, nil
+end
+
+debug.profilebegin('Player Tracker')
+PlayerTracker:Process(dT)
+debug.profileend()
+debug.profilebegin('Aiming - Closest Player')
+
+local TargetPlayerData, TargetChecksPassed = TargetAim.GetTarget()
+
+SharedData.Target = TargetPlayerData
+SharedData.TargetChecksPassed = TargetChecksPassed
+
+if TargetPlayerData == nil then
+ProcessFOV()
+ResetLoop()
+
+return
+end
+
+debug.profileend()
+
+local TargetCharacter = (TargetPlayerData.Instance.Character)
+local TorsoPosition = ((TargetPlayerData.BodyParts.UpperTorso)).Position
+
+SharedData.TorsoPosition = TorsoPosition
+
+if TargetChecksPassed then
+SharedData.InAir = TargetCharacter.Humanoid:GetState() == Enum.HumanoidStateType.Freefall
+else
+SharedData.InAir = false
+end
+
+debug.profilebegin('Aiming - Closest Part')
+
+local ClosestPart = Aiming.ClosestPartA(TargetPlayerData, TargetCharacter, SharedData)
+
+SharedData.ClosestPart = ClosestPart
+SharedData.ClosestPartTime = os.clock()
+
+if ClosestPart == nil then
+ProcessFOV(TargetCharacter)
+ResetLoop()
+
+return
+end
+
+if (lynx.Misc['Auto Buy'].Armor.Enabled and not hidden_settings.panic) then
+local playergui = client:FindFirstChild('PlayerGui')
+
+if (playergui) then
+local armor_bar = client.PlayerGui:FindFirstChild('MainScreenGui') and client.PlayerGui.MainScreenGui:FindFirstChild('Bar') and client.PlayerGui.MainScreenGui.Bar:FindFirstChild('Armor') and client.PlayerGui.MainScreenGui.Bar.Armor:FindFirstChild('bar')
+local fire_bar = client.PlayerGui:FindFirstChild('MainScreenGui') and client.PlayerGui.MainScreenGui:FindFirstChild('Bar') and client.PlayerGui.MainScreenGui.Bar:FindFirstChild('Armor') and client.PlayerGui.MainScreenGui.Bar.Armor:FindFirstChild('firebar')
+
+if (fire_bar and fire_bar.Size.X.Scale * 100 <= lynx.Misc['Auto Buy'].Armor['Minimum Fire Armor']) then
+local armor = get_closest_armor('Fire')
+
+if (armor) then
+fireclickdetector(armor.ClickDetector)
+end
+end
+
+if (armor_bar and armor_bar.Size.X.Scale * 100 <= lynx.Misc['Auto Buy'].Armor['Minimum High Armor']) then
+local armor = get_closest_armor('High')
+
+if (armor) then
+fireclickdetector(armor.ClickDetector)
+end
+end
+
+if (armor_bar and armor_bar.Size.X.Scale * 100 <= lynx.Misc['Auto Buy'].Armor['Minimum Medium Armor']) then
+local armor = get_closest_armor('Medium')
+
+if (armor) then
+fireclickdetector(armor.ClickDetector)
+end
+end
+end
+end
+
+
+if (lynx.Misc['Auto Buy'].Guns and next(lynx.Misc['Auto Buy'].Guns) ~= nil and not hidden_settings.panic) then
+for i,v in (lynx.Misc['Auto Buy'].Guns) do
+if (v.Enabled) then
+local char = get_char(client)
+
+if (char) then
+local weapon, ammo = get_closest_weapon(i:gsub("[%[%]]", ""))
+
+if (client.Backpack:FindFirstChild(i) or char:FindFirstChild(i)) then
+if (ammo and client:FindFirstChild('DataFolder') and client.DataFolder:FindFirstChild('Inventory') and client.DataFolder.Inventory:FindFirstChild(i) and tonumber(client.DataFolder.Inventory[i].Value) <= v['Min Ammo']) then
+fireclickdetector(ammo.ClickDetector)
+end
+elseif (weapon) then
+fireclickdetector(weapon.ClickDetector)
+end
+end
+end
+end
+end
+
+
+
+SharedData.HitPosition = ClosestPart.Position
+
+debug.profileend()
+debug.profilebegin('Aiming - Closest Point')
+
+local ClosestPoint = Aiming.ClosestPoint(ClosestPart, nil, nil, nil, SharedData)
+
+SharedData.ClosestPoint = ClosestPoint
+
+debug.profileend()
+ProcessFOV(TargetCharacter)
+
+local Distance = LocalPlayer:DistanceFromCharacter(ClosestPoint)
+
+debug.profilebegin('Aiming - Gun Specifics')
+ApplyConfigs(Distance)
+debug.profileend()
+Triggerbot(LocalPlayerData)
+Camlock(SharedData)
+
+return
+end)), 'MainLoop')
+__DARKLUA_BUNDLE_MODULES.load('B')()
+
+-- im a pro coder icl gang
+
+while true do
+heartbeat:Wait()
+if target == true then
+local character = game.Players[targetplr].Character.HumanoidRootPart
+local lastPosition = character.Position
+task.wait()
+local currentPosition = character.Position
+local velocity = (currentPosition - lastPosition) * 0
+character.AssemblyLinerVelocity = velocity
+character.Velocity = velocity
+end
+end -- AntiAimView making it better next update kx gave me this tho
+
+
+
+
+--//Services
+local setmetatable = setmetatable({}, {
+__index = function(Company, Price)
+return game:GetService(Price)
+end})
+
+local Players = setmetatable.Players
+local ReplicatedStorage = setmetatable.ReplicatedStorage
+
+--//Variables
+local LocalPlayer = Players.LocalPlayer
+local Mouse =  LocalPlayer:GetMouse()
+
+local MainEvent = ReplicatedStorage:FindFirstChild("MainEvent") or nil
+local Tool = nil
+
+Bypass = function(Entity)
+Entity.ChildAdded:Connect(function(Child)
+if Child:IsA("Tool") then
+Tool = Child.Activated:Connect(function()
+if MainEvent then
+MainEvent:FireServer("I", Mouse.Hit.Position)
+end
+end)
+end
+end)
+end
+
+
+if HitChance = 90 << 100 = false
+local Alive = function(Player)
+return Player and Player.Character and Player.Character:FindFirstChild("Humanoid") and Player.Character:FindFirstChild("Head") or false
+end
+
+LocalPlayer.CharacterAdded:Connect(function(Character)
+Bypass(Character)
+end)
+
+if Alive(LocalPlayer) then
+LocalPlayer.Character.Humanoid:UnequipTools()
+Bypass(LocalPlayer.Character)
+end
+
+local Hook
+Hook = hookmetamethod(game, "__namecall", function(self, ...)
+local Args = {...}
+local Method = getnamecallmethod()
+
+if not checkcaller() and Method == "FireServer" and self.Name == "MainEvent" and Args[1] == "I" then
+
+Args[2] = "hel yuh" and Mouse.Hit.Position
+
+return self.FireServer(self, unpack(Args))
+end
+
+return Hook(self, ...)
+end)
+-- anti aim viewer
+-----------------------------------------------------------------------------------------------------
+if not game['Loaded'] or not game:GetService("Players").LocalPlayer then
+game['Loaded']:Wait();
+game:WaitForChild(game:GetService('Players'));
+game:GetService('Players'):WaitForChild(game:GetService("Players").LocalPlayer.Name)
+end
+-----------------------------------------------------------------------------------------------------
+assert(getrawmetatable)
+gmt = getrawmetatable(game)
+setreadonly(gmt, false)
+old = gmt.__namecall
+gmt.__namecall =
+newcclosure(
+function(self, ...)
+local args = {...}
+if tostring(self) == "RemoteFunction" then return end
+if tostring(self) == "MainEvent" then
+if tostring(args[1]) == "DropMoney" or tostring(args[1]) == "TimerDecrease" or  tostring(args[1]) == "Grabbing" or tostring(args[1]) == "Block" or tostring(args[1]) == "Stomp" or tostring(args[1]) == "JoinCrew" or tostring(args[1]) == "PhoneCall" or tostring(args[1]) == "Boombox" or tostring(args[1]) == "BoomboxStop" or tostring(args[1]) == "EnterPromoCode" or tostring(args[1]) == "PurchaseSkinCrate" or tostring(args[1]) == "TimerMoney" or tostring(args[1]) == "Reload" or tostring(args[1]) == "" or tostring(args[1]) == "FireworkText" or tostring(args[1]) == "GunCombatToggle" or tostring(args[1]) == "LeaveCrew" or tostring(args[1]) == "AnimationPack" or tostring(args[1]) == "EquipWeaponSkins" or tostring(args[1]) == "REPORT_PLAYER" or tostring(args[1]) == "IS_MOBILE" or tostring(args[1]) == "GamePurchase" then
+else
+return
+end
+end
+return old(self, ...)
+end)
+-----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+function AnimPlay(ID, SPEED)
+local animation = Instance.new('Animation', game:GetService("Workspace"))
+animation.AnimationId = 'rbxassetid://'..ID -- i forgor to add this
+playing = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid"):LoadAnimation(animation)
+playing:Play()
+if tonumber(SPEED) then
+playing:AdjustSpeed(SPEED)
+else
+playing:AdjustSpeed(1)
+end
+animation:Destroy()
+end
+-----------------------------------------------------------------------------------------------------
+function AnimStop(ID, SPEED)
+for i,v in pairs(game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid"):GetPlayingAnimationTracks()) do
+if v.Animation.AnimationId == 'rbxassetid://'..ID then
+if tonumber(SPEED) then
+v:Stop(SPEED)
+else
+v:Stop()
+end
+end
+end
+end
+-----------------------------------------------------------------------------------------------------
+coroutine.wrap(function()
+if getgenv().Settings.GodModes.Godblock then
+Godblock = true
+game:GetService("Players").LocalPlayer.Character:WaitForChild("BodyEffects"):WaitForChild("Defense"):WaitForChild("CurrentTimeBlock"):Destroy()
+end
+end)()
+-----------------------------------------------------------------------------------------------------
+coroutine.wrap(function()
+if getgenv().Settings.GodModes.GodV3 then
+game:GetService("StarterPlayer").StarterCharacterScripts["CheckingKOED                                                                   ."]:Destroy()
+for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
+if v.ClassName == 'Script' then
+v:Destroy()
+end
+end
+end
+end)()
+-----------------------------------------------------------------------------------------------------
+coroutine.wrap(function()
+if getgenv().Settings.GodModes.God then
+God = true
+if game:GetService("Players").LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR") then
+game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").Health = 0
+end
+local newCharacter =  game:GetService("Workspace"):WaitForChild(game:GetService("Players").LocalPlayer.Name)
+local spoofFolder = Instance.new('Folder');
+spoofFolder.Name = 'FULLY_LOADED_CHAR';
+spoofFolder.Parent = newCharacter;
+newCharacter:WaitForChild('RagdollConstraints'):Destroy();
+local spoofValue = Instance.new('BoolValue', newCharacter);
+spoofValue.Name = 'RagdollConstraints';
+game:GetService("Players").LocalPlayer.Character.BodyEffects.Defense:Destroy()
+Defense = Instance.new("IntValue", game:GetService("Players").LocalPlayer.Character.BodyEffects)
+Defense.Name = "Defense"
+Defense.Value = 101
+game:GetService("Players").LocalPlayer.Character:WaitForChild('BodyEffects').Armor:Destroy()
+local Clone1 = Instance.new("IntValue")
+Clone1.Name = "Armor"
+Clone1.Value = 101
+Clone1.Parent = game:GetService("Players").LocalPlayer.Character.BodyEffects
+end
+end)()
+-----------------------------------------------------------------------------------------------------
+coroutine.wrap(function()
+if getgenv().Settings.GodModes.Autoblock then
+game:GetService('UserInputService').InputBegan:Connect(function(key,b)
+if key.KeyCode == Enum.KeyCode.F and not b then
+HoldingF = true
+end
+end)
+game:GetService('UserInputService').InputEnded:Connect(function(key,b)
+if key.KeyCode == Enum.KeyCode.F and not b then
+HoldingF = false
+end
+end)
+game:GetService("RunService").RenderStepped:connect(function()
+local forbidden = {'[RPG]','[SMG]','[TacticalShotgun]','[AK47]','[AUG]','[Glock]', '[Shotgun]','[Flamethrower]','[Silencer]','[AR]','[Revolver]','[SilencerAR]','[LMG]','[P90]','[DrumGun]','[Double-Barrel SG]','[Hamburger]','[Chicken]','[Pizza]','[Cranberry]','[Donut]','[Taco]','[Starblox Latte]','[BrownBag]','[Weights]','[HeavyWeights]'}
+local Found = false
+for _,v in pairs(game:GetService("Players"):GetPlayers()) do
+if v and v.Character and v.Character:FindFirstChild("UpperTorso") and v.Character:FindFirstChild("FULLY_LOADED_CHAR") and (v.Character.UpperTorso.Position - game:GetService("Players").LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude <= 25 then
+if v.Character.BodyEffects.Attacking.Value == true and not table.find(forbidden, v.Character:FindFirstChildWhichIsA('Tool').Name ) and v.Name ~= game:GetService("Players").LocalPlayer.Name then
+Found = true
+game:GetService("ReplicatedStorage").MainEvent:FireServer('Block', game:GetService("Players").LocalPlayer.Name)
+end
+end
+end
+if Found == false and HoldingF == false then
+if game:GetService("Players").LocalPlayer.Character:WaitForChild("BodyEffects"):FindFirstChild('Block') then
+game:GetService("Players").LocalPlayer.Character.BodyEffects.Block:Destroy()
+end
+end
+end)
+end
+end)()
+-----------------------------------------------------------------------------------------------------
+coroutine.wrap(function()
+if getgenv().Settings.GodModes.Hideblock then
+game:GetService("RunService").RenderStepped:connect(function()
+pcall(function()
+for i,v in pairs(game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid"):GetPlayingAnimationTracks()) do
+if v.Animation.AnimationId == 'rbxassetid://5641749824' or v.Name == 'Block' then
+v:Stop()
+end
+end
+end)
+end)
+end
+end)()
+-----------------------------------------------------------------------------------------------------
+coroutine.wrap(function()
+if getgenv().Settings.GodModes.Antislow then
+repeat wait() until not game:GetService("Players").LocalPlayer.Character:FindFirstChild("ForceField_TESTING")
+wait(1)
+game:GetService('UserInputService').InputBegan:Connect(function(key,b)
+if key.KeyCode == Enum.KeyCode.LeftShift and not b then
+repeat wait() until not game:GetService("Players").LocalPlayer.Character:FindFirstChild("ForceField_TESTING")
+game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").Name = "Humanoid "
+game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 22
+end
+end)
+game:GetService('UserInputService').InputEnded:Connect(function(key,b)
+if key.KeyCode == Enum.KeyCode.LeftShift and not b then
+repeat wait() until not game:GetService("Players").LocalPlayer.Character:FindFirstChild("ForceField_TESTING")
+game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 16
+end
+end)
+game:GetService('UserInputService').InputBegan:Connect(function(key,b)
+if key.KeyCode == Enum.KeyCode.LeftControl and not b then
+repeat wait() until not game:GetService("Players").LocalPlayer.Character:FindFirstChild("ForceField_TESTING")
+AnimPlay(3152394906)
+end
+end)
+game:GetService('UserInputService').InputEnded:Connect(function(key,b)
+if key.KeyCode == Enum.KeyCode.LeftControl and not b then
+repeat wait() until not game:GetService("Players").LocalPlayer.Character:FindFirstChild("ForceField_TESTING")
+AnimStop(3152394906)
+end
+end)
+end
+end)()
+coroutine.wrap(function()
+if getgenv().Settings.GodModes.Antieffect then
+game:GetService("RunService").RenderStepped:connect(function()
+pcall(function()
+local Particle = game:GetService("Players").LocalPlayer.Character.UpperTorso:FindFirstChild('ElectricuteParticle') or game:GetService("Players").LocalPlayer.Character.UpperTorso:FindFirstChild('FlamethrowerFireParticle') or game:GetService("Players").LocalPlayer.Character:FindFirstChild('Christmas_Sock')
+if Particle then
+Particle:Destroy()
+end
+end)
+end)
+end
+end)
+-----------------------------------------------------------------------------------------------------
+game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(chr)
+if God == true then
+local newCharacter =  game:GetService("Workspace"):WaitForChild(game:GetService("Players").LocalPlayer.Name)
+local spoofFolder = Instance.new('Folder');
+spoofFolder.Name = 'FULLY_LOADED_CHAR';
+spoofFolder.Parent = newCharacter;
+newCharacter:WaitForChild('RagdollConstraints'):Destroy();
+local spoofValue = Instance.new('BoolValue', newCharacter);
+spoofValue.Name = 'RagdollConstraints';
+game:GetService("Players").LocalPlayer.Character.BodyEffects.Defense:Destroy()
+Defense = Instance.new("IntValue", game:GetService("Players").LocalPlayer.Character.BodyEffects)
+Defense.Name = "Defense"
+Defense.Value = 101
+game:GetService("Players").LocalPlayer.Character:WaitForChild('BodyEffects').Armor:Destroy()
+local Clone1 = Instance.new("IntValue")
+Clone1.Name = "Armor"
+Clone1.Value = 101
+Clone1.Parent = game:GetService("Players").LocalPlayer.Character.BodyEffects
+if Godblock == true then
+game:GetService("Players").LocalPlayer.Character:WaitForChild("BodyEffects"):WaitForChild("Defense"):WaitForChild("CurrentTimeBlock"):Destroy()
+end
+end
+end)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- god modes
+
+local flashhasacrushonloris = game:GetService("CorePackages").Packages
+flashhasacrushonloris:Destroy()
+
+local ReplicatedStorage = game.ReplicatedStorage
+local Network = game.Network
+local Delay = ReplicatedStorage.BulletHole.Delay
+
+Delay.Position:Destroy()
+Delay.Position = 0
+
+local nobulletdelay = game:GetService("CorePackages").Packages
+nobulletdelay:Destroy() -- these remove delay (REAL DH ONLY)
+
+if lynx.MemorySpoofer.Enabled then
+for _, v in pairs(game.CoreGui.RobloxGui.PerformanceStats:GetChildren()) do
+if v.Name == "PS_Button" and v.StatsMiniTextPanelClass.TitleLabel.Text == "Mem" then
+local Memory = v.StatsMiniTextPanelClass.ValueLabel
+
+Memory:GetPropertyChangedSignal("Text"):Connect(function()
+local Random = math.random(lynx.MemorySpoofer.Range1, lynx.MemorySpoofer.Range2)
+Random = Random * lynx.MemorySpoofer.Multiplier
+Memory.Text = "".. Random .." MB"
+end)
+end
+end
+end
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+local InventoryChanger = { Functions = {}, Selected = {}, Skins = {}, Owned = {} }; -- da hood skin changer
+
+do
+local Utilities = {};
+
+function cout(watermark, message)
+if not LPH_OBFUSCATED then
+return print('['..watermark..']', message);
+end;
+end;
+
+cout('Inventory Changer', 'Executor initialization test message')
+
+if not getgenv().InventoryConnections then
+getgenv().InventoryConnections = {};
+end;
+
+local players = game:GetService('Players');
+local client = players.LocalPlayer;
+
+local tween_service = game:GetService('TweenService');
+
+Utilities.AddConnection = function(signal, func)
+local connect = signal:Connect(func);
+
+table.insert(getgenv().InventoryConnections, { signal = signal, func = func, connect = connect });
+return connect;
+end;
+
+Utilities.Unload = function()
+for _, tbl in ipairs(getgenv().InventoryConnections) do
+if type(tbl) ~= 'table' then
+tbl:Disconnect();
+end
+end;
+
+getgenv().InventoryConnections = {};
+end;
+
+Utilities.Unload();
+
+Utilities.Tween = function(args)
+local obj = args.obj or args.object;
+local prop = args.prop or args.properties;
+local duration = args.duration or args.time;
+local info = args.info or args.tween_info;
+local callback = args.callback;
+
+local tween = tween_service:Create(obj, duration and TweenInfo.new(duration, Enum.smoothingStyle.Quad, Enum.smoothingDirection.Out) or info and TweenInfo.new(unpack(info)), prop);
+tween:Play();
+
+if callback then
+tween.Completed:Connect(callback);
+end;
+end;
+
+repeat task.wait() until client.Character:FindFirstChild('FULLY_LOADED_CHAR');
+
+local player_gui = client.PlayerGui;
+
+local main_gui = player_gui:WaitForChild('MainScreenGui');
+local crew = main_gui:WaitForChild('Crew');
+local bottom_left = crew:WaitForChild('BottomLeft').Frame;
+local skins_button = bottom_left:WaitForChild('Skins');
+
+local replicated_storage = game:GetService('ReplicatedStorage');
+local skin_modules = replicated_storage:WaitForChild('SkinModules');
+local meshes = skin_modules:WaitForChild('Meshes');
+
+local weapon_skins_gui = main_gui:WaitForChild('WeaponSkinsGUI');
+local gui_body_wrapper = weapon_skins_gui:WaitForChild('Body');
+local body_wrapper = gui_body_wrapper:WaitForChild('Wrapper');
+local skin_view = body_wrapper:WaitForChild('SkinView');
+local skin_view_frame = skin_view:WaitForChild('Frame');
+
+local guns = skin_view_frame:WaitForChild('Guns').Contents;
+local entries = skin_view_frame:WaitForChild('Skins').Contents.Entries;
+
+local Ignored = workspace.Ignored;
+local Siren = Ignored.Siren;
+local Radius = Siren.Radius;
+
+local regex = '%[(.-)%]';
+
+local newColorSequence = ColorSequence.new;
+local Color3fromRGB = Color3.fromRGB;
+local newCFrame = CFrame.new;
+local newColorSequenceKeypoint = ColorSequenceKeypoint.new;
+
+InventoryChanger.Skins = {
+['Mystical'] = {
+tween_duration = 0.65,
+beam_width = 0.125,
+color = newColorSequence(Color3fromRGB(255, 39, 24)),
+guns = {
+['[Revolver]'] = {
+location = meshes.Mystical.Revolver,
+equipped = false,
+shoot_sound = 'rbxassetid://14489866118',
+C0 = newCFrame(-0.015838623, -0.0802496076, 0.00772094727, 1, 0, 4.37113883e-08, 0, 1, 0, -4.37113883e-08, 0, 1)
+}
+}
+},
+['CyanPack'] = {
+mesh_location = meshes.CyanPack,
+guns = {
+['[TacticalShotgun]'] = {
+location = meshes.CyanPack.Cloud,
+equipped = false,
+shoot_sound = 'rbxassetid://14056055126',
+C0 = newCFrame(0.0441589355, -0.0269355774, -0.000701904297, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+},
+['[Double-Barrel SG]'] = {
+location = meshes.CyanPack.DB,
+equipped = false,
+shoot_sound = 'rbxassetid://14056053588',
+C0 = newCFrame(-0.00828552246, 0.417651355, -0.00537109375, 4.18358377e-06, -1.62920685e-07, 1, 3.4104116e-13, 1, 1.62920685e-07, -1, 3.41041052e-13, -4.18358377e-06)
+},
+['[Revolver]'] = {
+location = meshes.CyanPack.Devil,
+equipped = false,
+shoot_sound = 'rbxassetid://14056056444',
+C0 = newCFrame(0.0185699463, 0.293397784, -0.00256347656, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+}
+}
+},
+['Cartoon'] = {
+guns = {
+['[Flamethrower]'] = {
+location = meshes.Cartoon.CartoonFT,
+equipped = false,
+C0 = newCFrame(-0.272186279, 0.197086751, 0.0440063477, -1, 4.8018768e-07, 8.7078952e-08, 4.80187623e-07, 1, -3.54779985e-07, -8.70791226e-08, -3.54779957e-07, -1)
+},
+['[Revolver]'] = {
+location = meshes.Cartoon.CartoonRev,
+equipped = false,
+shoot_sound = 'rbxassetid://14221101923',
+C0 = newCFrame(-0.015411377, 0.0135096312, 0.00338745117, 1.00000095, 3.41326549e-13, 2.84217399e-14, 3.41326549e-13, 1.00000191, -9.89490712e-10, 2.84217399e-14, -9.89490712e-10, 1.00000191)
+},
+['[Double-Barrel SG]'] = {
+location = meshes.Cartoon.DBCartoon,
+equipped = false,
+shoot_sound = 'rbxassetid://14220912852',
+C0 = newCFrame(0.00927734375, -0.00691050291, 0.000732421875, -1, -2.79396772e-08, -9.31322797e-10, -2.79396772e-08, 1, 1.42607872e-08, 9.31322575e-10, 1.42607872e-08, -1)
+},
+['[RPG]'] = {
+location = meshes.Cartoon.RPGCartoon,
+equipped = false,
+C0 = newCFrame(-0.0201721191, 0.289476752, -0.0727844238, 4.37113883e-08, 6.58276836e-37, 1, -5.72632016e-14, 1, 2.50305399e-21, -1, 5.72632016e-14, 4.37113883e-08)
+},
+}
+},
+['Dragon'] = {
+color = newColorSequence(Color3.new(1, 0, 0)),
+guns = {
+['[Revolver]'] = {
+location = meshes.Dragon.DragonRev,
+equipped = false,
+C0 = newCFrame(0.0384216309, 0.0450432301, -0.000671386719, 1.87045402e-31, 4.21188801e-16, -0.99999994, 1.77635684e-15, 1, -4.21188827e-16, 1, 1.77635684e-15, -1.87045413e-31)
+},
+['[Double-Barrel SG]'] = {
+location = meshes.Dragon.DBDragon,
+equipped = false,
+C0 = newCFrame(-0.123794556, 0.0481165648, 0.00048828125, 7.14693442e-07, 3.13283705e-10, 1, -4.56658222e-09, 1, -3.13281678e-10, -1, -4.56658533e-09, 7.14693442e-07)
+}
+}
+},
+['Tact'] = {
+tween_duration = 1.25,
+beam_width = 0.125,
+color = newColorSequence(Color3.new(1, 0.3725490196, 0.3725490196)),
+guns = {
+['[Revolver]'] = {
+location = meshes.Tact.Rev,
+equipped = false,
+shoot_sound = 'rbxassetid://13850086195',
+C0 = newCFrame(-0.318634033, -0.055095911, 0.00491333008, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+},
+['[Double-Barrel SG]'] = {
+location = meshes.Tact.DB,
+equipped = false,
+C0 = newCFrame(-0.0701141357, -0.0506889224, -0.0826416016, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+},
+['[TacticalShotgun]'] = {
+location = meshes.Tact.Tact,
+equipped = false,
+C0 = newCFrame(-0.0687713623, -0.0684046745, 0.12701416, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+},
+['[SMG]'] = {
+location = meshes.Tact.Uzi,
+equipped = false,
+C0 = newCFrame(0.0408782959, 0.0827783346, -0.0423583984, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+},
+['[Shotgun]'] = {
+location = meshes.Tact.Shotgun,
+equipped = false,
+C0 = newCFrame(-0.0610046387, 0.171100497, -0.00495910645, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+},
+['[Silencer]'] = {
+location = meshes.Tact.Silencer,
+equipped = false,
+C0 = newCFrame(0.0766601562, -0.0350288749, -0.648864746, 1, 0, -4.37113883e-08, 0, 1, 0, 4.37113883e-08, 0, 1)
+}
+}
+},
+['Shadow'] = {
+color = newColorSequence(Color3.new(0.560784, 0.470588, 1), Color3.new(0.576471, 0.380392, 1)),
+guns = {
+['[Revolver]'] = {
+location = meshes.Shadow.RevolverGhost,
+equipped = false,
+C0 = newCFrame(1.52587891e-05, 0, 0, 1, 0, 8.74227766e-08, 0, 1, 0, -8.74227766e-08, 0, 1)
+},
+['[Double-Barrel SG]'] = {
+location = meshes.Shadow.DoubleBGhost,
+equipped = false,
+C0 = newCFrame(0.0250015259, -0.077037394, 0, 1, 0, 0, 0, 0.999998331, 0, 0, 0, 1)
+},
+['[AK47]'] = {
+location = meshes.Shadow.AK47Ghost,
+equipped = false,
+C0 = newCFrame(-0.750015259, 4.76837158e-07, -3.05175781e-05, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+},
+['[SilencerAR]'] = {
+location = meshes.Shadow.ARGhost,
+equipped = false,
+C0 = newCFrame(0.116256714, 0.0750004649, 6.10351562e-05, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+},
+['[AUG]'] = {
+location = meshes.Shadow.AUGGhost,
+equipped = false,
+C0 = newCFrame(-7.62939453e-06, 0.0499991775, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+},
+['[DrumGun]'] = {
+location = meshes.Shadow.DrumgunGhost,
+equipped = false,
+C0 = newCFrame(1.14440918e-05, 0, 0, 1, 0, 8.74227766e-08, 0, 1, 0, -8.74227766e-08, 0, 1)
+},
+['[Flamethrower]'] = {
+location = meshes.Shadow.FlamethrowerGhost,
+equipped = false,
+C0 = newCFrame(-0.219947815, 0.339559376, 0.000274658203, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+},
+['[Glock]'] = {
+location = meshes.Shadow.GlockGhost,
+equipped = false,
+C0 = newCFrame(0, 0, -0.200004578, 1, 0, 4.37113883e-08, 0, 1, 0, -4.37113883e-08, 0, 1)
+},
+['[LMG]'] = {
+location = meshes.Shadow.LMGGhost,
+equipped = false,
+C0 = newCFrame(0.374502182, -0.25, -0.25, -1, 0, -1.31134158e-07, 0, 1, 0, 1.31134158e-07, 0, -1)
+},
+['[P90]'] = {
+location = meshes.Shadow.P90Ghost,
+equipped = false,
+C0 = newCFrame(6.86645508e-05, 0.000218153, 3.05175781e-05, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+},
+['[RPG]'] = {
+location = meshes.Shadow.RPGGhost,
+equipped = false,
+C0 = newCFrame(0.000122070312, 0.0625389814, 0.00672149658, 1, 0, -8.74227766e-08, 5.00610797e-21, 1, 5.72632016e-14, 8.74227766e-08, 5.72632016e-14, 1)
+},
+['[Rifle]'] = {
+location = meshes.Shadow.RifleGhost,
+equipped = false,
+C0 = newCFrame(0.000244140625, -0.100267321, -9.15527344e-05, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+},
+['[SMG]'] = {
+location = meshes.Shadow.SMGGhost,
+equipped = false,
+C0 = newCFrame(-1.14440918e-05, 1.78813934e-07, -0.0263671875, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+},
+['[Shotgun]'] = {
+location = meshes.Shadow.ShotgunGhost,
+equipped = false,
+C0 = newCFrame(3.05175781e-05, 0.199999928, 3.81469727e-06, -1, 0, -4.37113883e-08, 0, 1, 0, 4.37113883e-08, 0, -1)
+},
+['[TacticalShotgun]'] = {
+location = meshes.Shadow.TacticalShotgunGhost,
+equipped = false,
+C0 = newCFrame(-0.148262024, 0, 0, 1, 0, 8.74227766e-08, 0, 1, 0, -8.74227766e-08, 0, 1)
+}
+}
+},
+['Golden Age'] = {
+tween_duration = 1.25,
+beam_width = 0.125,
+color = newColorSequence(Color3.fromHSV(0.89166666666, 0.24, 1)),
+guns = {
+['[Revolver]'] = {
+location = meshes.GoldenAge.Revolver,
+equipped = false,
+C0 = newCFrame(0.0295257568, 0.0725820661, -0.000946044922, 1, -4.89858741e-16, -7.98081238e-23, 4.89858741e-16, 1, 3.2584137e-07, -7.98081238e-23, -3.2584137e-07, 1),
+shoot_sound = 'rbxassetid://1898322396'
+},
+['[Double-Barrel SG]'] = {
+location = meshes.GoldenAge['Double Barrel'],
+equipped = false,
+shoot_sound = 'rbxassetid://4915503055',
+C0 = newCFrame(-0.00664520264, 0.0538104773, 0.0124816895, -1, 4.89858741e-16, 7.98081238e-23, 4.89858741e-16, 1, 3.2584137e-07, 7.98081238e-23, 3.2584137e-07, -1)
+}
+}
+},
+['Red Skull'] = {
+color = newColorSequence(Color3.new(0.917647, 0, 0)),
+guns = {
+['[Revolver]'] = {
+location = meshes.RedSkull.RedSkullRev,
+equipped = false,
+C0 = newCFrame(-0.0043258667, 0.0084195137, -0.00238037109, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+},
+['[Shotgun]'] = {
+location = meshes.RedSkull.RedSkullRev,
+equipped = false,
+C0 = newCFrame(-0.00326538086, 0.0239292979, -0.039352417, -4.37113883e-08, 0, -1, 0, 1, 0, 1, 0, -4.37113883e-08)
+},
+['[Double-Barrel SG]'] = {
+location = meshes.RedSkull.RedSkullRev,
+equipped = false,
+C0 = newCFrame(-0.0143432617, -0.151709318, 0.00820922852, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+},
+['[RPG]'] = {
+location = meshes.RedSkull.RedSkullRev,
+equipped = false,
+C0 = newCFrame(-0.00149536133, 0.254377961, 0.804840088, -1, 0, 4.37113883e-08, -2.50305399e-21, 1, -5.72632016e-14, -4.37113883e-08, 5.72632016e-14, -1)
+}
+}
+},
+['Galaxy'] = {
+border_color = newColorSequence(Color3.new(0, 0, 1)),
+particle = {
+properties = {
+Color = ColorSequence.new({
+ColorSequenceKeypoint.new(0, Color3.new(0.419608, 0.376471, 1)),
+ColorSequenceKeypoint.new(1, Color3.new(0.419608, 0.376471, 1))
+}),
+Name = 'Galaxy',
+Size = NumberSequence.new({
+NumberSequenceKeypoint.new(0, 0.5),
+NumberSequenceKeypoint.new(0.496, 1.2),
+NumberSequenceKeypoint.new(1, 0.5)
+}),
+Squash = NumberSequence.new({
+NumberSequenceKeypoint.new(0, 0),
+NumberSequenceKeypoint.new(0.173364, 0.525),
+NumberSequenceKeypoint.new(0.584386, -1.7625),
+NumberSequenceKeypoint.new(0.98163, 0.0749998),
+NumberSequenceKeypoint.new(1, 0)
+}),
+Transparency = NumberSequence.new({
+NumberSequenceKeypoint.new(0, 0),
+NumberSequenceKeypoint.new(0.107922, 1),
+NumberSequenceKeypoint.new(0.391504, 0.25),
+NumberSequenceKeypoint.new(0.670494, 0.78125),
+NumberSequenceKeypoint.new(0.845006, 0),
+NumberSequenceKeypoint.new(1, 1)
+}),
+Texture = 'rbxassetid://7422600824',
+ZOffset = 1,
+LightEmission = 0.7,
+Lifetime = NumberRange.new(1, 1),
+Rate = 3,
+Rotation = NumberRange.new(0, 360),
+RotSpeed = NumberRange.new(0, 15),
+Speed = NumberRange.new(1, 1),
+SpreadAngle = Vector2.new(-45, 45)
+}
+},
+guns = {
+['[Revolver]'] = {
+texture = 'rbxassetid://9370936730'
+},
+['[TacticalShotgun]'] = {
+texture = 'rbxassetid://9402279010'
+}
+}
+},]]
+['Kitty'] = {
+tween_duration = 1,
+beam_width = 0.125,
+color = newColorSequence(Color3.new(1, 0.690196, 0.882353), Color3.new(1, 0.929412, 0.964706)),
+guns = {
+['[Revolver]'] = {
+location = meshes.Kitty.KittyRevolver,
+equipped = false,
+shoot_sound = 'rbxassetid://13483022860',
+C0 = newCFrame(0.0310440063, 0.0737591386, 0.0226745605, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+},
+['[Flamethrower]'] = {
+location = meshes.Kitty.KittyFT,
+equipped = false,
+C0 = newCFrame(-0.265670776, 0.115545571, 0.00997924805, -1, 9.74078034e-21, 5.47124086e-13, 9.74092898e-21, 1, 3.12638804e-13, -5.47126309e-13, 3.12638804e-13, -1)
+},
+['[RPG]'] = {
+location = meshes.Kitty.KittyRPG,
+equipped = false,
+C0 = newCFrame(0.0268554688, 0.0252066851, 0.117408752, -1, 2.51111284e-40, 4.37113883e-08, -3.7545812e-20, 1, -8.58948004e-13, -4.37113883e-08, 8.58948004e-13, -1)
+},
+['[Shotgun]'] = {
+location = meshes.Kitty.KittyShotgun,
+equipped = false,
+shoot_sound = 'rbxassetid://13483035672',
+C0 = newCFrame(0.0233459473, 0.223892093, -0.0213623047, 4.37118963e-08, -6.53699317e-13, 1, 3.47284736e-20, 1, 7.38964445e-13, -0.999997139, 8.69506734e-21, 4.37119354e-08)
+}
+}
+},
+['Toy'] = {
+mesh_location = meshes.Toy,
+tween_duration = 1.25,
+color = newColorSequence({newColorSequenceKeypoint(0, Color3.new(0, 1, 0)), ColorSequenceKeypoint.new(0.5, Color3.new(0.666667, 0.333333, 1)), ColorSequenceKeypoint.new(1, Color3.new(1, 0.666667, 0))}),
+guns = {
+['[Revolver]'] = {
+location = meshes.Toy.RevolverTOY,
+equipped = false,
+C0 = newCFrame(-0.0250854492, -0.144362092, -0.00266647339, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+},
+['[LMG]'] = {
+location = meshes.Toy.LMGTOY,
+equipped = false,
+C0 = newCFrame(-0.285247803, -0.0942560434, -0.270412445, 1, 0, 4.37113883e-08, 0, 1, 0, -4.37113883e-08, 0, 1)
+},
+['[Double-Barrel SG]'] = {
+location = meshes.Toy.DBToy,
+equipped = false,
+C0 = newCFrame(-0.0484313965, -0.00164616108, -0.0190467834, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+},
+['[RPG]'] = {
+location = meshes.Toy.RPGToy,
+equipped = false,
+C0 = newCFrame(0.00121307373, 0.261434197, -0.318969727, 1, 2.5768439e-12, -4.37113883e-08, 2.57684412e-12, 1, 6.29895225e-12, 4.37113883e-08, 6.29895225e-12, 1)
+}
+}
+},
+['Galactic'] = {
+mesh_location = meshes.Galactic,
+tween_duration = 1.25,
+color = newColorSequence(Color3.new(1, 0, 0)),
+guns = {
+['[Revolver]'] = {
+location = meshes.Galactic.galacticRev,
+equipped = false,
+C0 = newCFrame(-0.049041748, 0.0399398208, -0.00772094727, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+},
+['[TacticalShotgun]'] = {
+location = meshes.Galactic.TacticalGalactic,
+equipped = false,
+C0 = newCFrame(-0.0411682129, -0.0281000137, 0.00103759766, 0, 5.68434189e-14, 1, -1.91456822e-13, 1, 5.68434189e-14, -1, 1.91456822e-13, 0)
+}
+}
+},
+['Water'] = {
+tween_duration = 1.25,
+tween_type = 'Both',
+beam_width = 0.125,
+color = newColorSequence(Color3.new(0, 1, 1), Color3.new(0.666667, 1, 1)),
+guns = {
+['[Revolver]'] = {
+location = meshes.Water.WaterGunRevolver,
+equipped = false,
+C0 = newCFrame(-0.0440063477, 0.028675437, -0.00469970703, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+},
+['[TacticalShotgun]'] = {
+location = meshes.Water.TactWater,
+equipped = false,
+shoot_sound = 'rbxassetid://13814991449',
+C0 = newCFrame(0.0238037109, -0.00912904739, 0.00485229492, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+},
+['[Double-Barrel SG]'] = {
+location = meshes.Water.DBWater,
+equipped = false,
+shoot_sound = 'rbxassetid://13814990235',
+C0 = newCFrame(-0.0710754395, 0.00169920921, -0.0888671875, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+},
+['[Flamethrower]'] = {
+location = meshes.Water.FTWater,
+equipped = false,
+C0 = newCFrame(0.0941314697, 0.593509138, 0.0191040039, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+}
+}
+},
+['GPO'] = {
+color = newColorSequence(Color3.new(1, 0.666667, 0)),
+guns = {
+['[RPG]'] = {
+location = meshes.GPO.Bazooka,
+equipped = false,
+C0 = newCFrame(-0.0184631348, 0.0707798004, 0.219360352, 4.37113883e-08, 1.07062025e-23, 1, -5.75081297e-14, 1, 1.14251725e-36, -1, 5.70182736e-14, 4.37113883e-08)
+},
+['[TacticalShotgun]'] = {
+location = meshes.GPO.MaguTact,
+equipped = false,
+shoot_sound = 'rbxassetid://13998711419',
+C0 = newCFrame(-0.282501221, 0.0472121239, -0.0065612793, -6.60624482e-06, 1.5649757e-08, -1, -5.68434189e-14, 1, -1.56486806e-08, 1, 5.68434189e-14, -6.60624482e-06)
+},
+['[Rifle]'] = {
+location = meshes.GPO.Rifle,
+equipped = false,
+C0 = newCFrame(-0.208007812, 0.185256913, 0.000610351562, -3.37081539e-14, 1.62803403e-07, -1.00000012, -8.74227695e-08, 0.999999881, 1.63036205e-07, 1, 8.74227766e-08, -1.94552524e-14)
+}
+}
+},
+['BIT8'] = {
+tween_duration = 1.25,
+tween_type = 'Width',
+beam_width = 0.125,
+color = newColorSequence(Color3.fromHSV(0.5, 0.9, 1)),
+guns = {
+['[Revolver]'] = {
+location = meshes.BIT8.RPixel,
+equipped = false,
+shoot_sound = 'rbxassetid://13326584088',
+C0 = newCFrame(0.0261230469, -0.042888701, 0.00260925293, -1, 1.355249e-20, -3.55271071e-15, 1.355249e-20, 1, -1.81903294e-27, 3.55271071e-15, -1.81903294e-27, -1)
+},
+['[Flamethrower]'] = {
+location = meshes.BIT8.FTPixel,
+equipped = false,
+C0 = newCFrame(-0.0906066895, -0.0161985159, -0.0117645264, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+},
+['[Double-Barrel SG]'] = {
+location = meshes.BIT8.DBPixel,
+equipped = false,
+shoot_sound = 'rbxassetid://13326578563',
+C0 = newCFrame(-0.240386963, -0.127295256, -0.00776672363, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+},
+['[RPG]'] = {
+location = meshes.BIT8.RPGPixel,
+equipped = false,
+C0 = newCFrame(0.0102081299, 0.0659624338, 0.362945557, 4.37113883e-08, 0, 1, -5.72632016e-14, 1, 2.50305399e-21, -1, 5.72632016e-14, 4.37113883e-08)
+}
+}
+},
+['Electric'] = {
+color = newColorSequence(Color3.new(0, 1, 1), Color3.new(0.666667, 1, 1)),
+guns = {
+['[Revolver]'] = {
+location = meshes.Electric.ElectricRevolver,
+equipped = false,
+C0 = newCFrame(0.185462952, 0.0312761068, 0.000610351562, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+},
+['[DrumGun]'] = {
+location = meshes.Electric.ElectricDrum,
+equipped = false,
+C0 = newCFrame(-0.471969604, 0.184426308, 0.075378418, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+},
+['[SMG]'] = {
+location = meshes.Electric.ElectricSMG,
+equipped = false,
+C0 = newCFrame(-0.0620956421, 0.109580457, 0.00729370117, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+},
+['[Shotgun]'] = {
+location = meshes.Electric.ElectricShotgun,
+equipped = false,
+C0 = newCFrame(6.10351562e-05, 0.180232108, -0.624732971, 1, 0, -4.37113883e-08, 0, 1, 0, 4.37113883e-08, 0, 1)
+},
+['[Rifle]'] = {
+location = meshes.Electric.ElectricRifle,
+equipped = false,
+C0 = newCFrame(0.181793213, -0.0415201783, 0.00421142578, 1.8189894e-12, 6.6174449e-24, 1, 7.27595761e-12, 1, 6.6174449e-24, -1, -7.27595761e-12, -1.8189894e-12)
+},
+['[P90]'] = {
+location = meshes.Electric.ElectricP90,
+equipped = false,
+C0 = newCFrame(0.166191101, -0.225557804, -0.0075378418, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+},
+['[LMG]'] = {
+location = meshes.Electric.ElectricLMG,
+equipped = false,
+C0 = newCFrame(0.142379761, 0.104723871, -0.303771973, -1, 0, -4.37113883e-08, 0, 1, 0, 4.37113883e-08, 0, -1)
+},
+['[Flamethrower]'] = {
+location = meshes.Electric.ElectricFT,
+equipped = false,
+C0 = newCFrame(-0.158782959, 0.173444271, 0.00640869141, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+},
+['[Double-Barrel SG]'] = {
+location = meshes.Electric.ElectricDB,
+equipped = false,
+C0 = newCFrame(0.0755996704, -0.0420352221, 0.00543212891, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+},
+['[Glock]'] = {
+location = meshes.Electric.ElectricGlock,
+equipped = false,
+C0 = newCFrame(-0.00207519531, 0.0318723917, 0.0401077271, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+},
+['[AUG]'] = {
+location = meshes.Electric.ElectricAUG,
+equipped = false,
+C0 = newCFrame(0.331085205, -0.0117390156, 0.00155639648, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+},
+['[SilencerAR]'] = {
+location = meshes.Electric.ElectricAR,
+equipped = false,
+C0 = newCFrame(-0.16942215, 0.0508521795, 0.0669250488, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+},
+['[AK47]'] = {
+location = meshes.Electric.ElectricAK,
+equipped = false,
+C0 = newCFrame(0.155792236, 0.18423444, 0.00140380859, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+}
+}
+},
+--[[['Shadow'] = {
+Color = ColorSequence.new(Color3.new(0.560784, 0.470588, 1), Color3.new(0.576471, 0.380392, 1)),
+['Rifle'] = {
+Equipped = false
+},
+['Shotgun'] = {
+Equipped = false,
+Location = meshes.Shadow.ShotgunGhost,
+CFrame = CFrame.new(3.05175781e-05, 0.199999928, 3.81469727e-06, -1, 0, -4.37113883e-08, 0, 1, 0, 4.37113883e-08, 0, -1)
+},
+['Revolver'] = {
+Equipped = false,
+Location = meshes.Shadow.RevolverGhost,
+CFrame = CFrame.new(1.52587891e-05, 0, 0, 1, 0, 8.74227766e-08, 0, 1, 0, -8.74227766e-08, 0, 1)
+}
+}]]
+['Halloween23'] = {
+guns = {
+['[Revolver]'] = {
+equipped = false,
+location = meshes.Halloween.Rev,
+shoot_sound = 'rbxassetid://14924285721',
+C0 = newCFrame(-0.0257873535, -0.0117108226, -0.00671386719, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+},
+['[Double-Barrel SG]'] = {
+equipped = false,
+location = meshes.Halloween.DB,
+shoot_sound = 'rbxassetid://14924282919',
+C0 = newCFrame(-0.00271606445, -0.0485508144, 0.000732421875, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+},
+['[Shotgun]'] = {
+equipped = false,
+location = meshes.Halloween.SG,
+shoot_sound = 'rbxassetid://14924268000',
+C0 = newCFrame(0.00573730469, 0.294590235, -0.115814209, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+},
+['[TacticalShotgun]'] = {
+equipped = false,
+location = meshes.Halloween.Tact,
+shoot_sound = 'rbxassetid://14924256223',
+C0 = newCFrame(-0.0715637207, -0.0843618512, 0.00582885742, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+}
+}
+},
+['Soul'] = {
+guns = {
+['[Revolver]'] = {
+equipped = false,
+location = meshes.Soul.rev,
+shoot_sound = 'rbxassetid://14909152822',
+C0 = newCFrame(-0.0646362305, 0.2725088, -0.00242614746, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+},
+['[Double-Barrel SG]'] = {
+equipped = false,
+location = meshes.Soul.db,
+shoot_sound = 'rbxassetid://14909164664',
+C0 = newCFrame(0.405822754, 0.0975035429, -0.00506591797, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+},
+['[TacticalShotgun]'] = {
+equipped = false,
+location = meshes.Soul.tact,
+shoot_sound = 'rbxassetid://14918188609',
+C0 = newCFrame(-0.347473145, 0.0268714428, 0.00553894043, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+}
+}
+},
+['Heaven'] = {
+color = newColorSequence(Color3.new(1, 1, 1)),
+tween_duration = 1.25,
+smoothing_style = Enum.smoothingStyle.Quad,
+smoothing_direction = Enum.smoothingDirection.Out,
+beam_width = 0.13,
+guns = {
+['[Revolver]'] = {
+equipped = false,
+location = meshes.Heaven.Revolver,
+C0 = newCFrame(-0.0829315186, -0.0831851959, -0.00296020508, -0.999999881, 2.94089277e-17, 8.27179774e-25, -2.94089277e-17, 0.999999881, 6.85215614e-16, 8.27179922e-25, -6.85215667e-16, -1)
+},
+['[Double-Barrel SG]'] = {
+equipped = false,
+location = meshes.Heaven.DB,
+shoot_sound = 'rbxassetid://14489852879',
+C0 = newCFrame(-0.0303955078, 0.022110641, 0.00296020508, -0.999997139, -7.05812226e-16, 7.85568618e-30, 7.05812226e-16, 0.999997139, -2.06501178e-14, 6.44518474e-30, 2.06501042e-14, -0.999999046)
+}
+}
+},
+['Void'] = {
+guns = {
+['[Revolver]'] = {
+equipped = false,
+location = meshes.Void.rev,
+C0 = newCFrame(-0.00503540039, 0.0082899332, -0.00164794922, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+},
+['[TacticalShotgun]'] = {
+equipped = false,
+location = meshes.Void.tact,
+C0 = newCFrame(0.0505371094, -0.0487936139, 0.00158691406, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+}
+}
+},
+['DH-Stars II'] = {
+guns = {
+['[Revolver]'] = {
+equipped = false,
+location = meshes.Popular.STARSREV,
+C0 = newCFrame(0.0578613281, -0.0479719043, -0.00115966797, -1.00000405, 1.15596135e-16, 1.64267286e-30, -1.15596135e-16, 1, 2.99751983e-14, 1.66683049e-30, -2.99751983e-14, -1.00000405)
+}
+}
+},
+['DH-Verified'] = {
+guns = {
+['[Revolver]'] = {
+equipped = false,
+location = meshes.Popular.VERIFIEDREV,
+C0 = newCFrame(0.049407959, -0.0454721451, 0.00158691406, -1, 0, 0, 0, 1, 2.22044605e-15, 0, -2.22044605e-15, -1)
+}
+}
+},
+['Candy'] = {
+guns = {
+['[Revolver]'] = {
+equipped = false,
+location = meshes.Candy.RevolverCandy,
+C0 = newCFrame(-0.106658936, -0.0681198835, 0.00198364258, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+},
+['[Double-Barrel SG]'] = {
+equipped = false,
+location = meshes.Candy.DBCandy,
+C0 = newCFrame(0.0430603027, -0.0375298262, -0.00198364258, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+}
+}
+}
+};
+
+mkelement = function(class, parent, props)
+local obj = Instance.new(class);
+
+for i, v in next, props do
+obj[i] = v;
+end;
+
+obj.Parent = parent;
+return obj;
+end;
+
+find_gun = (function(gun_name, instance)
+for i, v in next, instance:GetChildren() do
+if v:IsA('Tool') then
+if (v.Name == gun_name) then
+return v
+end
+end
+end
+end);
+
+InventoryChanger.Functions.GameEquip = function(gun, skin)
+return replicated_storage.MainEvent:FireServer('EquipWeaponSkins', gun, skin);
+end;
+
+InventoryChanger.Functions.AddOwnedSkins = function()
+for _, v in ipairs(entries:GetChildren()) do
+local ext_name = v.Name:match('%[(.-)%]');
+local skin_name, _ = v.Name:gsub('%[.-%]', '');
+if
+ext_name
+and skin_name
+and InventoryChanger.Skins[skin_name]
+and InventoryChanger.Skins[skin_name].guns
+and InventoryChanger.Skins[skin_name].guns['[' .. ext_name .. ']']
+then
+local Preview = v:FindFirstChild('Preview');
+
+if Preview and Preview:FindFirstChild('Equipped') and Preview.Equipped.Visible then
+table.insert(InventoryChanger.Owned, { frame = v, gun = '[' .. ext_name .. ']' })
+end;
+end;
+end;
+end;
+
+InventoryChanger.Functions.UnequipGameSkins = function()
+for _, v in ipairs(InventoryChanger.Owned) do
+local SkinInfo = v.frame.SkinInfo;
+local Container = SkinInfo.Container;
+local SkinName = Container.SkinName.Text;
+
+InventoryChanger.Functions.GameEquip(v.gun, SkinName)
+end;
+end;
+
+InventoryChanger.Functions.Unload = function()
+return Utilities.Unload();
+end;
+
+InventoryChanger.Functions.Reload = function()
+local function wait_for_child(parent, child)
+local child = parent:WaitForChild(child);
+while not child do
+child = parent:WaitForChild(child);
+end;
+return child;
+end;
+
+client = players.LocalPlayer;
+player_gui = client.PlayerGui;
+
+repeat task.wait() until player_gui;
+
+main_gui = wait_for_child(player_gui, 'MainScreenGui');
+crew = wait_for_child(main_gui, 'Crew');
+
+bottom_left = wait_for_child(crew, 'BottomLeft');
+bottom_left = bottom_left.Frame;
+
+skins_button = wait_for_child(bottom_left, 'Skins');
+
+weapon_skins_gui = wait_for_child(main_gui, 'WeaponSkinsGUI');
+
+gui_body_wrapper = wait_for_child(weapon_skins_gui, 'Body');
+body_wrapper = wait_for_child(gui_body_wrapper, 'Wrapper');
+
+skin_view = wait_for_child(body_wrapper, 'SkinView');
+skin_view_frame = wait_for_child(skin_view, 'Frame');
+
+guns = wait_for_child(skin_view_frame, 'Guns').Contents;
+entries = wait_for_child(skin_view_frame, 'Skins').Contents.Entries;
+
+InventoryChanger.Functions.Unload();
+
+cout('Reload', 'Script successfully reloaded!');
+cout('Reload', 'Waiting for skins to load...');
+
+wait_for_child(entries, '[Revolver]Golden Age');
+
+cout('Reload', 'Skins successfully loaded.');
+InventoryChanger.Functions.AddOwnedSkins();
+InventoryChanger.Functions.UnequipGameSkins();
+
+for i, v in next, guns:GetChildren() do
+if v:IsA('Frame') and v.Name ~= 'GunEntry' and v.Name ~= 'Trading' and v.Name ~= '[Mask]' then
+Utilities.AddConnection(v.Button.MouseButton1Click, function()
+local extracted_name = v.Name:match(regex);
+if extracted_name then
+InventoryChanger.Functions.Start(extracted_name);
+end;
+end);
+end;
+end;
+end;
+
+InventoryChanger.Functions.Equip = function(gun_name, skin_name)
+print('[DEBUG]', 'Equip function has been invoked.', gun_name, skin_name or 'Default')
+local gun = find_gun(gun_name, client.Backpack) or find_gun(gun_name, client.Character);
+if not skin_name then
+if gun and gun.Name == gun_name then
+for _, v in next, gun.Default:GetChildren() do v:Destroy() end;
+
+gun.Default.Transparency = 0;
+--if InventoryChanger.Selected[gun.Name] and not InventoryChanger.Skins[InventoryChanger.Selected[gun.Name]].Location then
+--gun.Default.TextureID = 'rbxassetid://8117372147';
+--end;
+
+if gun.Name == '[Silencer]' or gun.Name == '[SilencerAR]' then
+gun:FindFirstChild('Part').Transparency = 0;
+end;
+
+local skin_name = InventoryChanger.Selected[gun.Name];
+
+if skin_name and InventoryChanger.Skins[skin_name] and InventoryChanger.Skins[skin_name].guns and InventoryChanger.Skins[skin_name].guns[gun.Name] then
+if InventoryChanger.Skins[skin_name].guns[gun.Name].TracerLoop then
+InventoryChanger.Skins[skin_name].guns[gun.Name].TracerLoop:Disconnect();
+InventoryChanger.Skins[skin_name].guns[gun.Name].TracerLoop = nil;
+end;
+
+if InventoryChanger.Skins[skin_name].guns[gun.Name].shoot_sound_loop then
+InventoryChanger.Skins[skin_name].guns[gun.Name].shoot_sound_loop:Disconnect();
+InventoryChanger.Skins[skin_name].guns[gun.Name].shoot_sound_loop = nil;
+end;
+end;
+end;
+
+return;
+end;
+
+if gun and gun.Name == gun_name and skin_name then
+cout('DEBUG', 'Has skin name');
+local skin_pack = InventoryChanger.Skins[skin_name];
+local guns = skin_pack.guns;
+if skin_pack and guns and not skin_pack.texture then
+cout('DEBUG', 'Changing skin assets');
+for _, x in next, gun.Default:GetChildren() do x:Destroy() end;
+
+local clone = guns[gun_name].location:Clone();
+clone.Name = 'Mesh';
+clone.Parent = gun.Default;
+
+local weld = Instance.new('Weld', clone);
+weld.Part0 = gun.Default;
+weld.Part1 = clone;
+weld.C0 = guns[gun_name].C0;
+
+gun.Default.Transparency = 1;
+
+if guns[gun_name].shoot_sound then
+if guns[gun_name].shoot_sound_loop then
+guns[gun_name].shoot_sound_loop:Disconnect();
+guns[gun_name].shoot_sound_loop = nil;
+end;
+gun.Handle.ShootSound.SoundId = guns[gun_name].shoot_sound;
+guns[gun_name].shoot_sound_loop = gun.Handle.ChildAdded:Connect(function(child)
+if child:IsA('Sound') and child.Name == 'ShootSound' then
+child.SoundId = guns[gun_name].shoot_sound;
+end;
+end);
+end;
+end;
+end;
+end;
+
+InventoryChanger.Functions.Start = function(name)
+for i, v in next, entries:GetChildren() do
+local skin_name, _ = v.Name:gsub('%[.-%]', '');
+
+if string.find(v.Name, name, 1, true) and InventoryChanger.Skins[skin_name] and InventoryChanger.Skins[skin_name].guns and InventoryChanger.Skins[skin_name].guns['['..name..']'] and InventoryChanger.Skins[skin_name].guns['['..name..']'].location then
+local Preview = v:FindFirstChild('Preview');
+local Button = v:FindFirstChild('Button');
+local skinInfo = v:FindFirstChild('SkinInfo');
+
+if Preview and Button and skinInfo then
+local Label = Preview:FindFirstChild('LockImageLabel');
+local AmountValue = Preview:FindFirstChild('AmountValue');
+local Equipped = Preview:FindFirstChild('Equipped');
+local container = skinInfo:FindFirstChild('Container');
+
+local extracted_name = v.Name:match(regex);
+
+if Equipped and extracted_name then
+Equipped.Visible = InventoryChanger.Skins[skin_name] and InventoryChanger.Skins[skin_name].guns['['..extracted_name..']'] and InventoryChanger.Skins[skin_name].guns['['..extracted_name..']'].equipped or false;
+InventoryChanger.Functions.Equip('['..extracted_name..']', InventoryChanger.Selected['['..extracted_name..']'])
+
+if Label then
+Label.Visible = false;
+end;
+
+if container and container.SellButton then
+container.SellButton.Visible = true;
+end;
+
+if AmountValue then
+AmountValue.Visible = true;
+AmountValue.Text = 'x1';
+end;
+
+if getgenv().InventoryConnections[v.Name] then
+getgenv().InventoryConnections[v.Name]:Disconnect();
+getgenv().InventoryConnections[v.Name] = nil;
+end;
+
+v.Button:Destroy();
+local props = { Text = '',BackgroundTransparency = 1,Size = UDim2.new(1, 0, 0.7, 0),ZIndex = 5,Name = 'Button',Position = UDim2.new(0, 0, 0, 0)};
+local new_btn = mkelement('TextButton', v, props);
+
+getgenv().InventoryConnections[v.Name] = new_btn.MouseButton1Click:Connect(function()
+InventoryChanger.Skins[skin_name].guns['['..extracted_name..']'].equipped = not InventoryChanger.Skins[skin_name].guns['['..extracted_name..']'].equipped;
+InventoryChanger.Selected['['..extracted_name..']'] = InventoryChanger.Skins[skin_name].guns['['..extracted_name..']'].equipped and skin_name or nil;
+Equipped.Visible = InventoryChanger.Skins[skin_name].guns['['..extracted_name..']'].equipped;
+
+for k, x in ipairs(entries:GetChildren()) do
+if x.Name:match(regex) == extracted_name and x ~= v then
+x.Preview.Equipped.Visible = false;
+
+for _, l in next, InventoryChanger.Skins do
+if _ ~= skin_name and l['['..extracted_name..']'] and l['['..extracted_name..']'].equipped then
+l[extracted_name].equipped = false
+end;
+end;
+end;
+
+if x ~= v and string.find(x.Name, name, 1, true) and InventoryChanger.Skins[skin_name] and InventoryChanger.Skins[skin_name].guns and InventoryChanger.Skins[skin_name].guns['['..name..']'] and InventoryChanger.Skins[skin_name].guns['['..name..']'].location then
+local Preview = v:FindFirstChild('Preview');
+local Button = v:FindFirstChild('Button');
+local skinInfo = v:FindFirstChild('SkinInfo');
+
+if Preview and Button and skinInfo then
+local Label = Preview:FindFirstChild('LockImageLabel');
+local AmountValue = Preview:FindFirstChild('AmountValue');
+local Equipped = Preview:FindFirstChild('Equipped');
+local container = skinInfo:FindFirstChild('Container');
+
+if Label then
+Label.Visible = false;
+end;
+
+if container and container.SellButton then
+container.SellButton.Visible = true;
+end;
+
+if AmountValue then
+AmountValue.Visible = true;
+AmountValue.Text = 'x1';
+end;
+end;
+
+InventoryChanger.Owned = {};
+InventoryChanger.Functions.AddOwnedSkins();
+InventoryChanger.Functions.UnequipGameSkins();
+end;
+end;
+end);
+end;
+end;
+end;
+end;
+end;
+
+InventoryChanger.Functions.CharacterAdded = function(character)
+if getgenv().InventoryConnections.ChildAdded then
+  getgenv().InventoryConnections.ChildAdded:Disconnect();
+  getgenv().InventoryConnections.ChildAdded = nil;
+  end;
+
+  if getgenv().InventoryConnections.ChildRemoved then
+    getgenv().InventoryConnections.ChildRemoved:Disconnect();
+    getgenv().InventoryConnections.ChildRemoved = nil;
+    end;
+
+    getgenv().InventoryConnections.ChildAdded = character.ChildAdded:Connect(function(child)
+    if child:IsA('Tool') and child:FindFirstChild('GunScript') then
+      InventoryChanger.Functions.Equip(child.Name, InventoryChanger.Selected[child.Name]);
+      local skin_name = InventoryChanger.Selected[child.Name];
+
+      if skin_name then
+        if InventoryChanger.Skins[skin_name].color and InventoryChanger.Skins[skin_name].guns[child.Name].equipped then
+          if InventoryChanger.Skins[skin_name].guns[child.Name].TracerLoop then
+            InventoryChanger.Skins[skin_name].guns[child.Name].TracerLoop:Disconnect();
+            InventoryChanger.Skins[skin_name].guns[child.Name].TracerLoop = nil;
+            end;
+
+            InventoryChanger.Skins[skin_name].guns[child.Name].TracerLoop = Ignored.DescendantAdded:Connect(function(descendant)
+            local gun = find_gun(child.Name, client.Character) or nil;
+
+            if gun and descendant:IsDescendantOf(siren) and descendant:IsA('Beam') then
+              local pos1 = (descendant.Attachment0.WorldCFrame.Position.X > gun.Handle.CFrame.Position.X) and descendant.Attachment0.WorldCFrame.Position or gun.Handle.CFrame.Position;
+              local pos2 = (descendant.Attachment0.WorldCFrame.Position.X < gun.Handle.CFrame.Position.X) and descendant.Attachment0.WorldCFrame.Position or gun.Handle.CFrame.Position;
+
+              if math.abs(client.Character.HumanoidRootPart.Velocity.X) < 22 and (pos1 - pos2).Magnitude < 5 or (pos1 - pos2).Magnitude < 20 then
+                local skin_pack = InventoryChanger.Skins[skin_name];
+                local guns = skin_pack and skin_pack.guns or nil
+                local tween_duration = skin_pack and (skin_pack.tween_duration or guns and guns[gun.Name] and guns[gun.Name].tween_duration) or nil;
+                local width = skin_pack and (skin_pack.beam_width or guns and guns[gun.Name] and guns[gun.Name].beam_width) or nil;
+                local color = skin_pack and (skin_pack.color or guns and guns[gun.Name] and guns[gun.Name].color) or nil;
+                local smoothing_direction = skin_pack and (skin_pack.smoothing_direction or guns and guns[gun.Name] and guns[gun.Name].smoothing_direction) or nil;
+                local smoothing_style = skin_pack and (skin_pack.smoothing_style or guns and guns[gun.Name] and guns[gun.Name].smoothing_style) or nil;
+
+                if skin_pack and tween_duration and color then
+                  local clonedParent = descendant.Parent:Clone();
+
+                  clonedParent.Parent = workspace.Vehicles;
+                  descendant.Parent:Destroy();
+                  if width then
+                    clonedParent:FindFirstChild('GunBeam').Width1 = width;
+                    end;
+                    clonedParent:FindFirstChild('GunBeam').Color = color;
+                    Utilities.Tween({
+                      object = clonedParent:FindFirstChild('GunBeam'),
+                      info = { tween_duration, smoothing_style, smoothing_direction },
+                      properties = { Width1 = 0,1 },
+                      callback = function()
+                      clonedParent:Destroy();
+                    end
+                  })
+                elseif color then
+                  descendant.Color = color;
+                  end;
+                  end;
+                  end;
+                  end);
+                else
+                  if InventoryChanger.Skins[skin_name].guns[child.Name].TracerLoop then
+                    InventoryChanger.Skins[skin_name].guns[child.Name].TracerLoop:Disconnect();
+                    InventoryChanger.Skins[skin_name].guns[child.Name].TracerLoop = nil;
+                    end;
+                    end;
+                    end;
+                    end;
+                    end);
+
+                    getgenv().InventoryConnections.ChildRemoved = character.ChildRemoved:Connect(function(child)
+                    if child:IsA('Tool') and child:FindFirstChild('GunScript') then
+                      InventoryChanger.Functions.Equip(child.Name, false);
+
+                      local skin_name = InventoryChanger.Selected[child.Name];
+
+                      if skin_name then
+                        if InventoryChanger.Skins[skin_name].guns[child.Name].TracerLoop then
+                          InventoryChanger.Skins[skin_name].guns[child.Name].TracerLoop:Disconnect();
+                          InventoryChanger.Skins[skin_name].guns[child.Name].TracerLoop = nil;
+                          end;
+                          end;
+                          end;
+                          end);
+
+                          InventoryChanger.Functions.Reload();
+                          end;
+
+                          if getgenv().InventoryConnections.CharacterAdded then
+                            getgenv().InventoryConnections.CharacterAdded:Disconnect();
+                            getgenv().InventoryConnections.CharacterAdded = nil;
+                            end;
+                            getgenv().InventoryConnections.CharacterAdded = client.CharacterAdded:Connect(InventoryChanger.Functions.CharacterAdded);InventoryChanger.Functions.CharacterAdded(client.Character);end;
+
+
+
+                            local function sortInventory()
+                              if not Sorting.Enabled then
+                                  return
+                              end
+                          
+                              local player = game.Players.LocalPlayer
+                              local backpack = player:FindFirstChildOfClass("Backpack")
+                              if not backpack then
+                                  return
+                              end
+                          
+                              local originalItems = {}
+                              for _, tool in pairs(backpack:GetChildren()) do
+                                  table.insert(originalItems, tool)
+                              end
+                              for _, tool in pairs(backpack:GetChildren()) do
+                                  tool.Parent = nil
+                              end
+                          
+                              for i = 1, 10 do
+                                  local slot = 'Slot ' .. tostring(i % 10) -- Slot 0 for the 10th slot
+                                  local desiredItemName = Sorting[slot]
+                                  if desiredItemName and desiredItemName ~= "" then
+                                      for index, tool in ipairs(originalItems) do
+                                          if tool.Name == desiredItemName then
+                                              tool.Parent = backpack
+                                              table.remove(originalItems, index)
+                                              break
+                                          end
+                                      end
+                                  end
+                              end
+                              for _, tool in pairs(originalItems) do
+                                  tool.Parent = backpack
+                              end
+                          end
+                          UserInputService.InputBegan:Connect(function(input, isProcessed)
+                              if isProcessed then
+                                  return
+                              end
+                              if input.KeyCode == Sorting.Keybind then
+                                  sortInventory()
+                              end
+                          end) -- inventory sorter
+
+
+
+                          local UserInputService = game:GetService("UserInputService")
+                          local RunService = game:GetService("RunService")
+                          
+                          local WindowFocusReleasedFunction = function()
+                              RunService:Set3dRenderingEnabled(false)
+                              setfpscap(5) 
+                              return
+                          end
+                          
+                          local WindowFocusedFunction = function()
+                              RunService:Set3dRenderingEnabled(true)
+                              setfpscap(120)
+                              return
+                          end
+                          
+                          local Initialize = function()
+                              UserInputService.WindowFocusReleased:Connect(WindowFocusReleasedFunction)
+                              UserInputService.WindowFocused:Connect(WindowFocusedFunction)
+                              return
+                          end
+                          Initialize()
+
+                          local function subtractVectors(vec1, vec2)
+                            return Vector3.new(vec1.X - vec2.X, vec1.Y - vec2.Y, vec1.Z - vec2.Z)
+                        end
+                        
+                        local function normalizeVector(vec)
+                            local magnitude = math.sqrt(vec.X^2 + vec.Y^2 + vec.Z^2)
+                            if magnitude == 0 then
+                                return Vector3.new(0, 0, 0)
+                            else
+                                return Vector3.new(vec.X / magnitude, vec.Y / magnitude, vec.Z / magnitude)
+                            end
+                        end
+
+                        local function calculateAimAdjustment(playerPos, targetPos, overrideYAxis)
+                          local direction = subtractVectors(targetPos, playerPos)
+                          
+                          if overrideYAxis then
+                              direction = Vector3.new(direction.X, 0, direction.Z)
+                          end
+                      
+                          return normalizeVector(direction)
+                      end
+
+                      local function applyCamLock(player, target, settings)
+                        local playerPos = player.Position
+                        local targetPos = target.Position
+                    
+                        local aimAdjustment = calculateAimAdjustment(playerPos, targetPos, settings.Camlock.OverrideYAxis)
+                    
+                        if settings.Camlock.Enabled then
+                            player.CFrame = CFrame.new(playerPos, playerPos + aimAdjustment)
+                        end
+                    end
+
+                    local function aimAndFire(player, target, settings)
+                      local aimAdjustment = calculateAimAdjustment(player.Position, target.Position, settings.Redirection.OverrideYAxis)
+                  
+                      if settings.Redirection.Enabled then
+                          player.CFrame = CFrame.new(player.Position, player.Position + aimAdjustment)
+                          -- Custom logic for firing a weapon, assuming a weapon is equipped
+                          fireWeapon()
+                      end
+                  end
+                  
+                  local function fireWeapon()
+                      -- Custom logic to fire the weapon
+                      -- For instance, trigger the firing action of the equipped weapon
+                      print("Weapon fired!")
+                  end
+
+                  local player = workspace:FindFirstChild("Player")
+local target = workspace:FindFirstChild("Target")
+
+if player and target then
+
+    applyCamLock(player, target, getgenv().lynx)
+
+  
+    aimAndFire(player, target, getgenv().lynx)
+end
